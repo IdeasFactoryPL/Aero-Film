@@ -1,0 +1,41 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	width: 800px;
+	height: 250px;
+	margin: 0 auto;
+	font-family: Tahoma, sans-serif;
+	font-size: 11px;
+	background-color:#616161;
+	
+}
+.moon{
+	position: absolute;
+	left: 5%;
+	bottom: 8%;
+	width: 800px;
+}
+
+.moon .text{
+	/*margin-left: 50px;*/
+	margin-top: 150px;
+	font-family: Tahoma, sans-serif;
+	font-size: 14px;
+	color: #cccccc;
+}
+.moon img{
+	margin-right: 50px;
+	width: auto;
+	float: left;
+}
+
+
+a:link {
+	color: #5ddbff;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #5ddbff;
+}
