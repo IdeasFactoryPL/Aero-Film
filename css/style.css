@@ -103,7 +103,7 @@ ul li a:hover + .hidden, .hidden:hover {
     margin: 10vh auto 0 auto;
     display: block;
     margin-bottom: 0;
-    width: 50%;
+    width: 4%;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
 }
@@ -156,6 +156,7 @@ zmiana powy┼╝sze powinno by─ç input[type=checkbox]:checked ~ #menu{
     background-color: white;
 }
 #o_nas {
+    padding: 5% 10%;
     background-color: #e2e2e2;
 }
 #oferta {
@@ -190,7 +191,7 @@ html[xmlns] .clearfix {
 }
 a {
     position: relative;
-    display: inline-block;
+    display: block;
 }
 .o_nas_napis, .oferta_napis, .cennik_napis, .kontakt_napis {
     opacity: .8;
@@ -232,6 +233,36 @@ a {
 .o_nas_napis {
     border-bottom: solid 2px white;
 }
+.top-right-img{
+  float: right;
+  position: absloute;
+  margin-top: -5%;
+}
+
+.top-right-img img{
+  float: right;
+    width:25vw;
+    height:auto;
+    padding: 2%;
+}
+
+#o_nas > p{
+  font-size: 3vh;
+  margin-bottom: 3vh;
+  margin-top: 3vh;
+}
+
+#o_nas > .napis-technologia{
+  font-family: "Gothic-Bold";
+  display: inline;
+  border-bottom: 2px solid white;
+  margin-bottom: 3vh;
+}
+
+#o_nas > p > span{
+  color: #f8bc4a;
+}
+
 .galeria {
     width: 100%;
 }
