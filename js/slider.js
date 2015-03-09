@@ -1,11 +1,14 @@
-
-        
 $(document).ready(function () {
   
     var carousel = $("#owl-demo");
   
    carousel.owlCarousel({
     autoPlay: 3000,
+     navigation:true,
+     navigationText: [
+      "<img src='img/slider_prev.png'>",
+      "<img src='img/slider_next.png'>"
+      ],
     itemsCustom: [
       [0,3]
     ],
@@ -25,6 +28,11 @@ $(document).ready(function () {
      
     });
   
-  
+  // $(".next").click(function(){
+  //   owl.trigger('owl.next');
+  // })
+  // $(".prev").click(function(){
+  //   owl.trigger('owl.prev');
+  // })
   
 });
