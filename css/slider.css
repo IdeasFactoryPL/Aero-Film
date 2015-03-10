@@ -16,7 +16,7 @@
 	zoom: 1;
 	*display: inline;/*IE7 life-saver */
 	margin: 5px;
-	padding: 3px 10px;
+	/*padding: 3px 10px;*/
 	font-size: 12px;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
@@ -79,13 +79,13 @@
 }
 
 #owl-demo{
-	height: 300px;
+	/*height: 300px;*/
 }
 
 #owl-demo .owl-item > div a {
     display: block;
     width: auto;
-    height: 250px;
+    	width: 20vw;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -98,8 +98,7 @@
 
 #owl-demo .owl-item > div img {
     display: block;
-    width: auto;
-    height: 250px;
+    	width: 100%;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
@@ -111,8 +110,8 @@
 }
 #owl-demo .owl-item > div {
   margin: 0px 2px;
-  margin-top: 25px;
-  height: 250px;
+  margin-top: 1.8vw;
+  	width: 25vw;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
   -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
@@ -125,20 +124,20 @@
   	filter: none;
 	-webkit-filter: grayscale(0%);
 	filter: grayscale(0%);
-  height: 300px;
+  	width: 20vw;
     -webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
    transition: all 1s;
 }
 
 #owl-demo .owl-item.active > div img{
-	height: 300px;
+	width: 25vw;
 	-webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
    transition: all 1s;
 	}
 
 #owl-demo .item{
   background: #3fbf79;
-  padding: 30px 0px;
+  /*padding: 30px 0px;*/
   margin: 10px;
   color: #FFF;
   -webkit-border-radius: 3px;
@@ -154,11 +153,17 @@
 .owl-theme .owl-controls .owl-buttons .owl-prev{
 	color: black;
   left: -10%;
-  top: 35%; 
+	top: 5.5vw;
+}
+ .owl-theme .owl-controls .owl-buttons .owl-prev img{
+ 	width: 5vw;
 }
  
 .owl-theme .owl-controls .owl-buttons .owl-next{
 	color: black;
   right: -10%;
-  top: 35%;
+  top: 5.5vw;
+}
+ .owl-theme .owl-controls .owl-buttons .owl-next img{
+ 	width: 5vw;
 }

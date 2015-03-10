@@ -22,6 +22,7 @@
 .owl-carousel .owl-wrapper{
 	display: none;
 	position: relative;
+	margin-left: -.8vw;
 	-webkit-transform: translate3d(0px, 0px, 0px);
 }
 .owl-carousel .owl-wrapper-outer{
@@ -39,6 +40,8 @@
 	
 .owl-carousel .owl-item{
 	float: left;
+	/*zmiana*/
+	/*margin-left:2vw;*/
 }
 .owl-controls .owl-page,
 .owl-controls .owl-buttons div{

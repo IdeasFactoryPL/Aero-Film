@@ -56,17 +56,17 @@ li {
     width: 12%;
 }
 li a {
+  color: #000;
     cursor: pointer;
     display: block;
     width: auto;
-    margin-top: 30px;
-    height: 60px;
+    padding-top: 28px;
+    padding-bottom: 28px;
     text-align: center;
-    /*line-height: 85px;*/
-    
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #666;
     text-decoration: none;
+}
+li a:hover {
+    color: #f8bc4a;
 }
 li a img {
     min-width: 30px;
@@ -77,12 +77,7 @@ li a img {
 }
 li a h2 {
     font-family: "Gothic";
-    color: #000;
     transition: color .3s;
-    /*text-shadow: 0px 0px 1px rgba(255, 255, 0, 0.7);*/
-}
-li a h2:hover {
-    color: #f8bc4a;
 }
 li ul {
     display: none;
@@ -99,8 +94,22 @@ li ul li a {
 ul li a:hover + .hidden, .hidden:hover {
     display: block;
 }
-.next_button {
-    margin: 10vh auto 0 auto;
+.next_button_darker {
+    margin: 5vh auto 0 auto;
+    display: block;
+    margin-bottom: 0;
+    width: 3vw;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+
+}
+.next_button_darker:hover {
+    -webkit-filter: brightness(95%);
+    filter: brightness(95%);
+}
+.next_button_lighter {
+    margin: 5vh auto 0 auto;
     display: block;
     margin-bottom: 0;
     width: 3vw;
@@ -108,19 +117,37 @@ ul li a:hover + .hidden, .hidden:hover {
     transition: all .5s ease;
     cursor: pointer;
 }
-.next_button:hover {
-    -webkit-filter: brightness(140%);
-    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1.4" /><feFuncG type="linear" slope="1.4" /><feFuncB type="linear" slope="1.4" /></feComponentTransfer></filter></svg>#filter');
+.next_button_lighter:hover {
     -webkit-filter: brightness(140%);
     filter: brightness(140%);
 }
+.next_button_cennik{
+    margin: 0px auto;
+    /*display: block;*/
+    margin-bottom: 0;
+    width: 3vw;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+
+    position:absolute;
+    left:0;
+    right:0;
+    margin-left:auto;
+    margin-right:auto;
+}
+.next_button_cennik:hover {
+    -webkit-filter: brightness(95%);
+    filter: brightness(95%);
+}
+
 .slider {
     height: 100%;
     width: 70%;
     margin-left: 15%;
 }
 .slider_back {
-    width: 100%;
+    height: 16.75vw;
     background-color: #e2e2e2;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -201,7 +228,7 @@ a {
     text-align: center;
     margin-top: 0;
     height: calc(6vh + 5px);
-    width: 20%;
+    width: 35%;
     font-size: 50px;
     font-weight: bolder;
     font-size: 6vh;
@@ -324,35 +351,35 @@ a {
 }
 #oferta > .table > .table_yellow_element {
     float: left;
-    width: 13vw;
-    height: 13vw;
+    width: 14.75vw;
+    height: 14.75vw;
     display: table;
     overflow: hidden;
     background-color: #f8bc4a;
     margin: 1.5vw 1.5vw;
-    padding: 3vw;
+    padding: 2vw;
 }
 #oferta > .table > .table_gray_element {
     float: left;
-    width: 13vw;
-    height: 13vw;
+    width: 14.75vw;
+    height: 14.75vw;
     display: table;
     overflow: hidden;
     background-color: #e2e2e2;
     margin: 1.5vw 1.5vw;
-    padding: 3vw;
+    padding: 2vw;
 }
 #oferta > .table > .invisible {
     float: left;
-    width: 13vw;
-    height: 13vw;
+    width: 14.75vw;
+    height: 14.75vw;
     display: table;
     overflow: hidden;
     margin: 1.5vw 1.5vw;
-    padding: 3vw;
+    padding: 2vw;
 }
 #oferta > .table span {
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     font-weight: bold;
     margin-bottom: .7vw;
     display: inline-block;
@@ -403,6 +430,10 @@ a {
 }
 #cennik > p > span {
     color: #f8bc4a;
+}
+
+#cennik > .cennik_end{
+  margin-bottom:7vh;
 }
 
 /*---------------Kontakt------------*/
@@ -460,10 +491,6 @@ a {
 	margin: 0 auto;
 	margin-top: 40px;
 }
-
-
-
-
 
 #face-slider {
     position: fixed;
