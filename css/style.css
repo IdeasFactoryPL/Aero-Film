@@ -407,6 +407,23 @@ a {
 .kontakt_napis {
     border-bottom: solid 2px white;
 }
+
+.left-contact {
+	height: 900px;
+	float: left;
+	width: 50%;
+}
+
+.left-contact p {
+	font-size: 16px;
+}
+
+.right-contact {
+	height: 900px;
+	float: right;
+	width: 50%;
+}
+
 #face-slider {
     position: fixed;
     right: -302px;
