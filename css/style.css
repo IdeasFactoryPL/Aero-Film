@@ -404,25 +404,66 @@ a {
 #cennik > p > span {
     color: #f8bc4a;
 }
+
+/*---------------Kontakt------------*/
+
 .kontakt_napis {
     border-bottom: solid 2px white;
 }
 
-.left-contact {
-	height: 900px;
+#left-contact {
 	float: left;
 	width: 50%;
+	margin: 0 auto;
 }
 
-.left-contact p {
+#left-contact p {
 	font-size: 16px;
 }
 
-.right-contact {
+.contact {
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+.contact {
+	width: 50%;
+	margin: 0 auto;
+	margin-bottom: 20px;
+}
+
+
+.contact input, .contact textarea {
+	background: #f9bd3c;
+	font-family: "Gothic",sans-serif;
+	width: 300px;
+	padding-bottom: 5px;
+	margin-bottom: 10px;
+}
+
+#formulaz {
+	width: 50%;
+	margin: 0 auto;
+}
+
+#right-contact {
 	height: 900px;
 	float: right;
 	width: 50%;
 }
+
+#right-contact #temp {
+	width: 300px;
+	height: 300px;
+	background-color: #333333;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+
+
+
+
 
 #face-slider {
     position: fixed;
