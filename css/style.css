@@ -547,13 +547,13 @@ text-align: center;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
-@media screen and (min-width: 761px) and (max-width: 1024px) {
+/*@media screen and (min-width: 761px) and (max-width: 1024px) {
     li {
         margin-right: 1px;
         width: 16%;
    }
-}
-@media screen and (max-width: 760px) {
+}*/
+@media screen and (max-width: 850px) {
     ul {
         position: static;
         display: none;
@@ -588,7 +588,7 @@ a h2 {
     opacity: 1;
     line-height: 60px;
     border-color: #f8bc4a;
-    border: 2px solid;
+    border: 1px solid;
     border-radius: 1px;
     background-color: white;
 }
@@ -610,13 +610,58 @@ li a {
     margin-bottom: 5px;
 }
 .logo img {
-    display: block;
+    display: none;
     margin-left: auto;
     margin-right: auto;
 }
 .kontakt .dane_kontaktowe {
     width: 97%;
 }
+#top{
+    background-color: transparent;
+}
+#start{
+    padding: 60px 0% 0%;
+}
+.next_button_darker{
+    width: 7vw;
+}
+.next_button_lighter{
+    width: 7vw;
+}
+.next_button_cennik{
+    width: 7vw;
+    position: relative;
+}
+#oferta > .table > .table_yellow_element{
+    width: 36vw;
+    height: 36vw;
+}
+#oferta > .table > .table_gray_element{
+    width: 36vw;
+    height: 36vw;
+}
+#oferta > .table > #wiersz1, #oferta > .table > #wiersz4, #oferta > .table > #wiersz5, #oferta > .table > #wiersz8, #oferta > .table > #wiersz9{
+    background-color: #f8bc4a;
+}
+#oferta > .table > #wiersz2, #oferta > .table > #wiersz3, #oferta > .table > #wiersz6, #oferta > .table > #wiersz7, #oferta > .table > #wiersz10{
+    background-color: #e2e2e2;
+}
+
+#oferta > .table > .invisible{
+    display: none;
+}
+#oferta > .table span{
+    font-size: 3.5vw;
+}
+#oferta > .table{
+    font-size: 2.5vw;
+}
+
+.galeria img, .galeria video{
+    width:50%;
+}
+
 .kontakt .dane_kontaktowe .imie {
     font-size: 30px;
 }
@@ -633,6 +678,6 @@ li a {
     margin-top: 48px;
 }
 #logo-glowna {
-    display: none;
+    /*display: none;*/
 }
 }
