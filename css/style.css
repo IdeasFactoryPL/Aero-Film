@@ -1,6 +1,4 @@
-
 a.nav-active {
-
     color: #f8bc4a;
 }
 @charset"UTF-8";
@@ -27,6 +25,10 @@ body {
     -webkit-transition: .5s;
     transition: .5s;
     z-index: 999;
+}
+.galeria > .dwa_na_dwa{
+    width: 50%;
+    height: auto;
 }
 .logo {
     width: 15%;
@@ -167,7 +169,7 @@ margin-bottom: 0;
 input[type=checkbox] {
     display: none;
 }
-input[type=checkbox]:checked ~ #menu {
+input[type=checkbox]: checked ~ #menu {
     display: block;
 }
 /*
@@ -561,6 +563,7 @@ text-align: center;
         width: 16%;
    }
 }*/
+
 @media screen and (max-width: 850px) {
     ul {
         position: static;
@@ -622,70 +625,120 @@ li a {
     margin-left: auto;
     margin-right: auto;
 }
-.kontakt .dane_kontaktowe {
-    width: 97%;
-}
-#top{
+#top {
     background-color: transparent;
 }
-#start{
+#start {
     padding: 60px 0% 0%;
 }
-.next_button_darker{
+.next_button_darker {
     width: 7vw;
 }
-.next_button_lighter{
+.next_button_lighter {
     width: 7vw;
 }
-.next_button_cennik{
+.next_button_cennik {
     width: 7vw;
     position: relative;
 }
-#oferta > .table > .table_yellow_element{
+#oferta > .table > .table_yellow_element {
     width: 36vw;
     height: 36vw;
 }
-#oferta > .table > .table_gray_element{
+#oferta > .table > .table_gray_element {
     width: 36vw;
     height: 36vw;
 }
-#oferta > .table > #wiersz1, #oferta > .table > #wiersz4, #oferta > .table > #wiersz5, #oferta > .table > #wiersz8, #oferta > .table > #wiersz9{
+#oferta > .table > #wiersz1, #oferta > .table > #wiersz4, #oferta > .table > #wiersz5, #oferta > .table > #wiersz8, #oferta > .table > #wiersz9 {
     background-color: #f8bc4a;
 }
-#oferta > .table > #wiersz2, #oferta > .table > #wiersz3, #oferta > .table > #wiersz6, #oferta > .table > #wiersz7, #oferta > .table > #wiersz10{
+#oferta > .table > #wiersz2, #oferta > .table > #wiersz3, #oferta > .table > #wiersz6, #oferta > .table > #wiersz7, #oferta > .table > #wiersz10 {
     background-color: #e2e2e2;
 }
-
-#oferta > .table > .invisible{
+#oferta > .table > .invisible {
     display: none;
 }
-#oferta > .table span{
+#oferta > .table span {
     font-size: 3.5vw;
 }
-#oferta > .table{
+#oferta > .table {
     font-size: 2.5vw;
 }
-
-.galeria img, .galeria video{
-    width:50%;
+.galeria img, .galeria video {
+    width: 50%;
 }
-
-.kontakt .dane_kontaktowe .imie {
-    font-size: 30px;
+@media screen and (max-width: 480px) {
+    #o_nas > .top-right-img img {
+        display: none;
+   }
+   .o_nas_napis, .oferta_napis, .cennik_napis, .kontakt_napis {
+       width: 70%;
+  }
+  #cennik > .left-img img {
+      display: none;
+ }
+ #oferta > .table > .table_yellow_element {
+     width: 80vw;
+     min-height: 20vw;
 }
-.kontakt .dane_kontaktowe p img {
-    width: 75px;
+#oferta > .table > .table_gray_element {
+    width: 80vw;
+    min-height: 20vw;
 }
-.kontakt .dane_kontaktowe p {
-    height: 75px;
+#oferta > .table > #wiersz1, #oferta > .table > #wiersz3, #oferta > .table > #wiersz5, #oferta > .table > #wiersz7, #oferta > .table > #wiersz9 {
+    background-color: #f8bc4a;
 }
-.kontakt .mapka {
-    width: 97%;
+#oferta > .table > #wiersz2, #oferta > .table > #wiersz4, #oferta > .table > #wiersz6, #oferta > .table > #wiersz8, #oferta > .table > #wiersz10 {
+    background-color: #e2e2e2;
 }
-#owl-demo .item {
-    margin-top: 48px;
+#oferta > .table span {
+    font-size: 7vw;
+}
+#oferta > .table {
+    font-size: 5.5vw;
+}
+#oferta > .top-right-img img {
+    display: none;
+}
+.next_button_darker, .next_button_lighter, .next_button_cennik {
+    width: 40px;
+}
+.start {
+    width: 90%;
+    margin: 5vh auto;
+}
+.galeria img, .galeria video {
+    width: 100%;
 }
 #logo-glowna {
-    /*display: none;*/
+    height: auto;
+    width: 80%;
+}
+.slider {
+    display: none;
+}
+.slider_back {
+    background-image: url('../img/slider/01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vw/2.0);
+    width: 100%;
+    margin-top: 5vh;
+}
+#ideasfactory:before {
+    content: "Fabryka stron ";
+    position: relative;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    filter: alpha(opacity=0);
+    top: -30px;
+    -webkit-transition: all .5s;
+    transition: all 0.5s;
+}
+#ideasfactory:hover:before {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    top: 0px;
 }
 }
