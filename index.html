@@ -1,67 +1,126 @@
 <!doctype html>
 <html lang="pl">
-
-<head>
-    <meta charset="UTF-8">
-    <title>Aero-Film.pl</title>
-    <meta name="author" content="IdeasFactory.pl Rafał Petryka">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/lightbox.css">
-    <link rel="stylesheet" href="css/slider.css">
-    <link rel="stylesheet" href="css/owl.carousel.css">
-
-    <link rel="shortcut icon" href="favicon.ico">
-    <script src='js/jquery.js'></script>
-    <script src="js/animatescroll.js"></script>
-    <script src="js/lightbox.min.js"></script>
-    <script src="js/movie_hover.js"></script>
-    <script src='js/owl.carousel.min.js'></script>
-    <script src="js/slider.js"></script>
-</head>
-
-<body>
-
-    <div id="top">
-        <div class="logo"><img id="logo" src="img/logo.png">
-        </div>
-        <div class="nav">
-            <label for="show-menu" class="show-menu">Menu</label>
-            <input type="checkbox" id="show-menu" role="button">
-
-            <ul id="menu">
-                <li>
-                    <a id="ikona1" onclick="$('body').animatescroll();">
-                        <h2 id="napis1">Start</h2>
-                    </a>
-                </li>
-                <li>
-                    <a id="ikona2" onclick="$('#o_nas').animatescroll();">
-                        <h2 id="napis2">O Nas</h2>
-                    </a>
-                </li>
-                <li>
-                    <a id="ikona3" onclick="$('#oferta').animatescroll();">
-                        <h2 id="napis3">Oferta</h2>
-                    </a>
-                </li>
-                <li>
-                    <a id="ikona4" onclick="$('#galeria').animatescroll();">
-                        <h2 id="napis4">Galeria</h2>
-                    </a>
-                </li>
-                <li>
-                    <a id="ikona5" onclick="$('#cennik').animatescroll();">
-                        <h2 id="napis5">Cennik</h2>
-                    </a>
-                </li>
-                <li>
-                    <a id="ikona6" onclick="$('#kontakt').animatescroll();">
-                        <h2 id="napis6">Kontakt</h2>
-                    </a>
-                </li>
-            </ul>
+    <head>
+        <meta charset="UTF-8">
+        <title>Aero-Film.pl</title>
+        <meta name="author" content="IdeasFactory.pl Rafał Petryka">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/lightbox.css">
+        <link rel="stylesheet" href="css/slider.css">
+        <link rel="stylesheet" href="css/owl.carousel.css">
+        <link rel="shortcut icon" href="favicon.ico">
+        <script src='js/jquery.js'></script>
+        <script src="js/animatescroll.js"></script>
+        <script src="js/lightbox.min.js"></script>
+        <script src="js/movie_hover.js"></script>
+        <script src='js/owl.carousel.min.js'></script>
+        <script src="js/slider.js"></script>
+        <script>
+                $(document).ready(function(){
+            /**
+            * This part does the "fixed navigation after scroll" functionality
+            * We use the jQuery function scroll() to recalculate our variables as the
+            * page is scrolled/
+            */
+            $(window).scroll(function(){
+                var window_top = $(window).scrollTop() + 12; // the "12" should equal the margin-top value for nav.stick
+                var div_top = $('#nav-anchor').offset().top;
+                    if (window_top > div_top) {
+                        $('.nav').addClass('stick');
+                    } else {
+                        $('.nav').removeClass('stick');
+                    }
+            });
+            /**
+            * This part causes smooth scrolling using scrollto.js
+            * We target all a tags inside the nav, and apply the scrollto.js to it.
+            */
+            $(".nav a").click(function(evn){
+                evn.preventDefault();
+                $('html,body').scrollTo(this.hash, this.hash);
+            });
+            /**
+            * This part handles the highlighting functionality.
+            * We use the scroll functionality again, some array creation and
+            * manipulation, class adding and class removing, and conditional testing
+            */
+            var aChildren = $(".nav li").children(); // find the a children of the list items
+            var aArray = []; // create the empty aArray
+                for (var i=0; i < aChildren.length; i++) {
+                var aChild = aChildren[i];
+                var ahref = $(aChild).attr('href');
+                aArray.push(ahref);
+            } // this for loop fills the aArray with attribute href values
+            $(window).scroll(function(){
+                var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
+                var windowHeight = $(window).height(); // get the height of the window
+                var docHeight = $(document).height();
+                for (var i=0; i < aArray.length; i++) {
+                    var theID = aArray[i];
+                    var divPos = $(theID).offset().top-81; // get the offset of the div from the top of page
+                    var divHeight = $(theID).height(); // get the height of the div in question
+                    if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
+                        $("a[href='" + theID + "']").addClass("nav-active");
+                    } else {
+                        $("a[href='" + theID + "']").removeClass("nav-active");
+                    }
+                }
+                if(windowPos + windowHeight == docHeight) {
+                    if (!$(".nav li:last-child a").hasClass("nav-active")) {
+                        var navActiveCurrent = $(".nav-active").attr("href");
+                        $("a[href='" + navActiveCurrent + "']").removeClass("nav-active");
+                        $(".nav li:last-child a").addClass("nav-active");
+                    }
+                }
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <div id="top">
+            <div class="logo"><img id="logo" src="img/logo.png">
+            </div>
+            <div class="nav">
+                <label for="show-menu" class="show-menu">Menu</label>
+                <input type="checkbox" id="show-menu" role="button">
+                <div id="nav-anchor"></div>
+                <!-- <nav> -->
+                    <ul id="menu">
+                        <li>
+                            <a href="#start" id="ikona1" onclick="$('body').animatescroll();">
+                            <h2 id="napis1">Start</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#o_nas" id="ikona2" onclick="$('#o_nas').animatescroll();">
+                            <h2 id="napis2">O Nas</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#oferta" id="ikona3" onclick="$('#oferta').animatescroll();">
+                            <h2 id="napis3">Oferta</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#galeria" id="ikona4" onclick="$('#galeria').animatescroll();">
+                            <h2 id="napis4">Galeria</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#cennik" id="ikona5" onclick="$('#cennik').animatescroll();">
+                            <h2 id="napis5">Cennik</h2>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#kontakt" id="ikona6" onclick="$('#kontakt').animatescroll();">
+                            <h2 id="napis6">Kontakt</h2>
+                            </a>
+                        </li>
+                    </ul>
+                <!-- </nav> -->
+            </div>
         </div>
     </div>
     <section id="start" class="contentpg">
@@ -71,52 +130,52 @@
                 <div id="owl-demo" class="owl-carousel">
                     <div>
                         <a href="img/slider/01.jpg" data-lightbox="slider">
-                            <img src="img/slider/01.jpg" alt="01">
+                        <img src="img/slider/01.jpg" alt="01">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/02.jpg" data-lightbox="slider">
-                            <img src="img/slider/02.jpg" alt="02">
+                        <img src="img/slider/02.jpg" alt="02">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/03.jpg" data-lightbox="slider">
-                            <img src="img/slider/03.jpg" alt="03">
+                        <img src="img/slider/03.jpg" alt="03">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/04.jpg" data-lightbox="slider">
-                            <img src="img/slider/04.jpg" alt="04">
+                        <img src="img/slider/04.jpg" alt="04">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/05.jpg" data-lightbox="slider">
-                            <img src="img/slider/05.jpg" alt="05">
+                        <img src="img/slider/05.jpg" alt="05">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/06.jpg" data-lightbox="slider">
-                            <img src="img/slider/06.jpg" alt="06">
+                        <img src="img/slider/06.jpg" alt="06">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/07.jpg" data-lightbox="slider">
-                            <img src="img/slider/07.jpg" alt="07">
+                        <img src="img/slider/07.jpg" alt="07">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/08.jpg" data-lightbox="slider">
-                            <img src="img/slider/08.jpg" alt="08">
+                        <img src="img/slider/08.jpg" alt="08">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/09.jpg" data-lightbox="slider">
-                            <img src="img/slider/09.jpg" alt="09">
+                        <img src="img/slider/09.jpg" alt="09">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/10.jpg" data-lightbox="slider">
-                            <img src="img/slider/10.jpg" alt="10">
+                        <img src="img/slider/10.jpg" alt="10">
                         </a>
                     </div>
                 </div>
@@ -126,13 +185,11 @@
             <h1>Film i Fotografia z powierza</h1>
             <p>Zastanawialiście się państwo jak wygląda <span>świat</span> z góry?</p>
             <p>Wystarczy wznieść się parę metrów wyżej a miejsca, które znamy możemy zobaczyć z innej, <span>ciekawszej</span> perspektywy</p>
-
             <a onclick="$('#o_nas').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker"></a>
             </a>
             </a>
         </div>
     </section>
-
     <section id="o_nas" class="contentpg">
         <div class="top-right-img">
             <img src="img/o_nas_pic.png">
@@ -141,21 +198,20 @@
             O nas
         </div>
         <p>
-            Nasza firma oferuje usługi filmowe oraz fotograficzne z powietrza. Do tej pory fotografia lotnicza była kosztowną i ciężko dostępną usługą ze względu na sprzęt który mógł ją wykonywać. W ostatnich latach Dzięki rozwojowi technologicznemu powstały bezzałogowe statki powietrzne, potocznie zwane dronami Umożliwiają one uzyskanie niepowtarzalnych ujęć w miejscach, gdzie klasyczne obiekty latające takie jak samoloty i śmigłowce nie mogą lub nie są w stanie dotrzeć
+        Nasza firma oferuje usługi filmowe oraz fotograficzne z powietrza. Do tej pory fotografia lotnicza była kosztowną i ciężko dostępną usługą ze względu na sprzęt który mógł ją wykonywać. W ostatnich latach Dzięki rozwojowi technologicznemu powstały bezzałogowe statki powietrzne, potocznie zwane dronami Umożliwiają one uzyskanie niepowtarzalnych ujęć w miejscach, gdzie klasyczne obiekty latające takie jak samoloty i śmigłowce nie mogą lub nie są w stanie dotrzeć
         </p>
         <p>
-            Posiadamy licencje na sterowanie bezzałogowym statkiem powietrznym UAV wydaną przez Urząd Lotnictwa Cywilnego, co gwarantuje bezpieczeństwo naszych usług
+        Posiadamy licencje na sterowanie bezzałogowym statkiem powietrznym UAV wydaną przez Urząd Lotnictwa Cywilnego, co gwarantuje bezpieczeństwo naszych usług
         </p>
         <p class="napis-technologia">
-            Technologia i sprzęt
+        Technologia i sprzęt
         </p>
         <p>
-            Do filmowania i robienia zdjęć wykorzystujemy wysokiej jakości multikoptera(drona). Jest on w stanie osiągnąć prędkość nawet do 18m/s, wzbić się na wysokość kilkuset metrów -jego zasięg to ok. 1km od miejsca w którym stoi operator. Dzięki trzyosiowemu systemowi stabilizującemu obraz jest płynny i odporny na drgania. Standardowo nagrywamy w rozdzielczości <span>(Full HD)</span> 1920x1080p/60 fps lecz na specjalne życzenie możemy nagrać film w wyższej rozdzielczości 2,7K oraz <span>4K</span>. Dzięki systemowi FPV, jesteśmy w stanie odtwarzać obraz na żywo podczas lotu drona. Operator multikoptera w czasie rzeczywistym ma dostęp do podglądu obrazu przekazywanego z kamery, dzięki temu klient może na bieżąco wybierać j najlepsze jego zdaniem ujęcia
+        Do filmowania i robienia zdjęć wykorzystujemy wysokiej jakości multikoptera(drona). Jest on w stanie osiągnąć prędkość nawet do 18m/s, wzbić się na wysokość kilkuset metrów -jego zasięg to ok. 1km od miejsca w którym stoi operator. Dzięki trzyosiowemu systemowi stabilizującemu obraz jest płynny i odporny na drgania. Standardowo nagrywamy w rozdzielczości <span>(Full HD)</span> 1920x1080p/60 fps lecz na specjalne życzenie możemy nagrać film w wyższej rozdzielczości 2,7K oraz <span>4K</span>. Dzięki systemowi FPV, jesteśmy w stanie odtwarzać obraz na żywo podczas lotu drona. Operator multikoptera w czasie rzeczywistym ma dostęp do podglądu obrazu przekazywanego z kamery, dzięki temu klient może na bieżąco wybierać j najlepsze jego zdaniem ujęcia
         </p>
         <a onclick="$('#oferta').animatescroll();" class="next_button_lighter"><img src="img/arrow.png" class="next_button_lighter"></a>
         </a>
     </section>
-
     <section id="oferta" class="contentpg">
         <div class="top-right-img">
             <img src="img/oferta_pic1.png">
@@ -164,11 +220,11 @@
             Oferta
         </div>
         <p>
-            Jesteśmy w stanie filmować prawie wszystko bez ograniczeń
-            <br> Dzięki niewielkim rozmiarom drona możliwe są ujęcia w centrach miast, między budynkami a nawet w ich wnętrzu
+        Jesteśmy w stanie filmować prawie wszystko bez ograniczeń
+        <br> Dzięki niewielkim rozmiarom drona możliwe są ujęcia w centrach miast, między budynkami a nawet w ich wnętrzu
         </p>
         <p>
-            Nasze usługi skierowane są praktycznie do każdego. Najczęściej filmowane i fotografowane są:
+        Nasze usługi skierowane są praktycznie do każdego. Najczęściej filmowane i fotografowane są:
         </p>
         <div class="table">
             <div class="table_yellow_element">
@@ -213,7 +269,6 @@
             </div>
             <div class="invisible">
                 <div class="middle">
-
                 </div>
             </div>
             <div class="table_gray_element">
@@ -232,17 +287,16 @@
         </div>
         <div class="under_table">
             <p>
-                Jesteśmy w stanie współpracować z mediami (portale informacyjne, telewizja, prasa)
-                <br> Mamy możliwość szybkiego dotarcia na miejsce zdarzenia oraz wysłania materiału bezpośrednio z miejsca wydarzenia
-                <br> Posiadamy polisę oc chroniącą naszych klientów
-                <br> Jesteśmy płatnikiem vat i wystawiamy faktury
-                <br>
+            Jesteśmy w stanie współpracować z mediami (portale informacyjne, telewizja, prasa)
+            <br> Mamy możliwość szybkiego dotarcia na miejsce zdarzenia oraz wysłania materiału bezpośrednio z miejsca wydarzenia
+            <br> Posiadamy polisę oc chroniącą naszych klientów
+            <br> Jesteśmy płatnikiem vat i wystawiamy faktury
+            <br>
             </p>
             <a onclick="$('#galeria').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker"></a>
             </a>
         </div>
     </section>
-
     <section id="galeria" class="contentpg">
         <div class="galeria">
             <div class="img_shadow"><img src="img/galeria/1.jpg">
@@ -254,95 +308,91 @@
             <img src="img/galeria/1.jpg">
             <img src="img/galeria/1.jpg">
             <img src="img/galeria/1.jpg">
-
             <!--             <div class="video">
-                <video class="thevideo" loop>
-                    <source src="img/galeria/2.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="video">
-                <video class="thevideo" loop>
-                    <source src="img/galeria/3.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                </video>
+                                <video class="thevideo" loop>
+                                        <source src="img/galeria/2.webm" type="video/webm">
+                                            Your browser does not support the video tag.
+                                </video>
+                        </div>
+                        <div class="video">
+                                <video class="thevideo" loop>
+                                        <source src="img/galeria/3.webm" type="video/webm">
+                                            Your browser does not support the video tag.
+                                </video>
             </div> -->
-
-    </section>
-
-    <section id="cennik" class="contentpg">
-        <div class="cennik_napis">
-            Cennik
-        </div>
-        <div class="left-img">
-            <img src="img/cennik_pic.png">
-        </div>
-        <p>
+        </section>
+        <section id="cennik" class="contentpg">
+            <div class="cennik_napis">
+                Cennik
+            </div>
+            <div class="left-img">
+                <img src="img/cennik_pic.png">
+            </div>
+            <p>
             każde zlecenie rozpatrujemy indywidualnie
             <br> cena uzależniona jest od dostępności obiektu, warunków atmosferycznych, poziomu trudności zlecenia oraz długości filmu i ilości wykonanych zdjęć
-        </p>
-        <p>
+            </p>
+            <p>
             ceny za sesje fotograficzną zaczynają się od <span>300</span> zł
             <br> istnieje możliwość obróbki zdjęć
             <br> materiał filmowy bez obróbki - od <span>500</span> zł
             <br> pełen film - montaż ujęć ,podkład muzyczny, obróbka wizualna - od <span>800</span> zł
-        </p>
-        <p class="cennik_end">
+            </p>
+            <p class="cennik_end">
             wszystkie ceny są cenami netto
-        </p>
-        <a onclick="$('#kontakt').animatescroll();" class="next_button_cennik"><img src="img/arrow.png" class="next_button_cennik"></a>
-    </section>
+            </p>
+            <a onclick="$('#kontakt').animatescroll();" class="next_button_cennik"><img src="img/arrow.png" class="next_button_cennik"></a>
+        </section>
+        <section id="kontakt" class="contentpg">
+            <div class="kontakt_napis">
+                Kontakt
+            </div>
 
-    <section id="kontakt" class="contentpg">
-        <div class="kontakt_napis">
-            Kontakt
+            <div id="left-contact">
+                <div class="contact">
+                    <p>AERO - FILM</p>
+                    <p>ŁOMIANKI (K. WARSZAWY)</p>
+                </div>
+
+                <div class="contact">
+                    <p>+48 609 275 751</p>
+                    <p>+48 607 772 770</p>
+                    <p>KONTAKT@AERO-FILM.PL</p>
+                </div>
+
+                <div class="contact">
+                    <form action="">
+                        <input type="text" name="imię" value="IMIĘ">
+                        <br>
+                        <input type="text" name="email" value="ADRES E-MAIL">
+                        <textarea name="message" rows="10">WIADOMOŚĆ
+                        </textarea>
+                    </form>
+                </div>
+
+            </div>
+
+            <div id="right-contact">
+                <div id="temp">
+                </div>
+            </div>
+
+        </section>
+        <!--
+        Slider do facebooka, przyda się później
+        <div id="face-slider">
+                <div id="tab"></div>
+                <div id="face-code"><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FMadamePiaseczno&amp;width&amp;height=280&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=true&amp;show_border=false&amp;appId=489774647751790" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:280px;" allowTransparency="true"></iframe></div>
         </div>
-		
-		<div id="left-contact">
-				<div class="contact">
-					<p>AERO - FILM</p>
-					<p>ŁOMIANKI (K. WARSZAWY)</p>
-				</div>
-				
-				<div class="contact">
-					<p>+48 609 275 751</p>
-					<p>+48 607 772 770</p>
-					<p>KONTAKT@AERO-FILM.PL</p>
-				</div>
-				
-				<div class="contact">
-					 <form action="">
-						<input type="text" name="imię" value="IMIĘ">
-						<br>
-						<input type="text" name="email" value="ADRES E-MAIL">
-						 <textarea name="message" rows="10">WIADOMOŚĆ
-						</textarea>
-					</form> 
-				</div>
-				
-		</div>
-			
-			<div id="right-contact">
-				<div id="temp">
-				</div>
-			</div>
-			
-    </section>
-    <!--
-Slider do facebooka, przyda się później
-<div id="face-slider">
-    <div id="tab"></div>
-    <div id="face-code"><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FMadamePiaseczno&amp;width&amp;height=280&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=true&amp;show_border=false&amp;appId=489774647751790" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:280px;" allowTransparency="true"></iframe></div>
-</div>
-<script>
-$(function(){
-    $('#face-slider').hover(
-        function(){ $('#face-slider').stop().animate({"right": "0"}, 1000); } ,
-        function(){ $('#face-slider').stop().animate({"right": "-302px"}, 1000); }
-    );
-});
-</script>
-  -->
-    <a href="http://ideasfactory.pl" target="_blank" id="ideasfactory">© IdeasFactory.pl</p>
-</body>
+        <script>
+        $(function(){
+            $('#face-slider').hover(
+                function(){ $('#face-slider').stop().animate({"right": "0"}, 1000); } ,
+                function(){ $('#face-slider').stop().animate({"right": "-302px"}, 1000); }
+            );
+        });
+        </script>
+        -->
+        <a href="http://ideasfactory.pl" target="_blank" id="ideasfactory">© IdeasFactory.pl</p>
+    </body>
 </html>
