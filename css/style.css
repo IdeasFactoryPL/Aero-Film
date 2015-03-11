@@ -26,7 +26,7 @@ body {
     transition: .5s;
     z-index: 999;
 }
-.galeria > .dwa_na_dwa{
+.galeria > .dwa_na_dwa {
     width: 50%;
     height: auto;
 }
@@ -130,8 +130,8 @@ ul li a:hover + .hidden, .hidden:hover {
 .next_button_cennik {
     margin: 0px auto;
     /*display: block;*/
-
-margin-bottom: 0;
+    
+    margin-bottom: 0;
     width: 3vw;
     -webkit-transition: all .5s ease;
     transition: all .5s ease;
@@ -169,7 +169,7 @@ margin-bottom: 0;
 input[type=checkbox] {
     display: none;
 }
-input[type=checkbox]: checked ~ #menu {
+input[type=checkbox]:checked ~ #menu {
     display: block;
 }
 /*
@@ -324,14 +324,14 @@ a {
 }
 #oferta > .table {
     /*width: 80vw;*/
-
-margin: 0 auto;
+    
+    margin: 0 auto;
     display: table-cell;
     vertical-align: middle;
     width: 100%;
     /*padding-left: 5vw;*/
-
-text-align: center;
+    
+    text-align: center;
     font-size: 1vw;
 }
 #oferta > .whole_table {
@@ -448,34 +448,29 @@ text-align: center;
     float: left;
     width: 45%;
     margin: 0 auto;
-
 }
-
 .contact {
     margin: 0 auto;
-	font-size: 3vh;
-	margin-bottom: 4vh;
-	margin-top: 4vh;
+    font-size: 3vh;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
 }
-
 .contact input, .contact textarea {
     background: #f9bd3c;
     font-family: "Gothic", sans-serif;
     width: 100%;
-	font-size: 3vh;
+    font-size: 3vh;
     margin-bottom: 2vh;
-
+    border-width: 0px;
+    border: none;
 }
-
 .contact input {
- 	height: 4vh;
+    height: 4vh;
 }
 .contact textarea {
-	height: 20vh;
-	padding-top: 8vh;
+    height: 20vh;
+    padding-top: 8vh;
 }
-
-
 #formulaz {
     width: 50%;
     margin: 0 auto;
@@ -485,14 +480,12 @@ text-align: center;
     width: 45%;
 }
 #right-contact #temp {
-	width: auto;
+    width: auto;
     height: 70vh;
     background-color: #333333;
     margin: 0 auto;
-	margin-top: 5vh;
+    margin-top: 5vh;
 }
-
-
 #face-slider {
     position: fixed;
     right: -302px;
@@ -569,176 +562,176 @@ text-align: center;
         position: static;
         display: none;
         z-index: 1;
-   }
-   .slide {
-       display: inline;
-       max-width: 100%;
-       height: auto;
-       z-index: 5;
-  }
-  ul li, li a {
-      width: 100%;
-      z-index: 1;
- }
- .show-menu {
-     display: block;
-}
-.nav {
-    width: 100%;
-    height: auto;
-    margin-right: 0;
-    position: fixed;
-    z-index: 10000;
-}
-li a img {
-    display: none;
-}
-a h2 {
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    filter: alpha(opacity=100);
-    opacity: 1;
-    line-height: 60px;
-    border-color: #f8bc4a;
-    border: 1px solid;
-    border-radius: 1px;
-    background-color: white;
-}
-li a {
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin-top: 0;
-}
-.top {
-    height: 148px;
-    opacity: 1;
-    filter: alpha(opacity=100);
-    z-index: 9;
-}
-.logo {
-    margin-top: 43px;
-    width: 100%;
-    float: right;
-    margin-bottom: 5px;
-}
-.logo img {
-    display: none;
-    margin-left: auto;
-    margin-right: auto;
-}
-#top {
-    background-color: transparent;
-}
-#start {
-    padding: 60px 0% 0%;
-}
-.next_button_darker {
-    width: 7vw;
-}
-.next_button_lighter {
-    width: 7vw;
-}
-.next_button_cennik {
-    width: 7vw;
-    position: relative;
-}
-#oferta > .table > .table_yellow_element {
-    width: 36vw;
-    height: 36vw;
-}
-#oferta > .table > .table_gray_element {
-    width: 36vw;
-    height: 36vw;
-}
-#oferta > .table > #wiersz1, #oferta > .table > #wiersz4, #oferta > .table > #wiersz5, #oferta > .table > #wiersz8, #oferta > .table > #wiersz9 {
-    background-color: #f8bc4a;
-}
-#oferta > .table > #wiersz2, #oferta > .table > #wiersz3, #oferta > .table > #wiersz6, #oferta > .table > #wiersz7, #oferta > .table > #wiersz10 {
-    background-color: #e2e2e2;
-}
-#oferta > .table > .invisible {
-    display: none;
-}
-#oferta > .table span {
-    font-size: 3.5vw;
-}
-#oferta > .table {
-    font-size: 2.5vw;
-}
-.galeria img, .galeria video {
-    width: 50%;
-}
-@media screen and (max-width: 480px) {
-    #o_nas > .top-right-img img {
+    }
+    .slide {
+        display: inline;
+        max-width: 100%;
+        height: auto;
+        z-index: 5;
+    }
+    ul li, li a {
+        width: 100%;
+        z-index: 1;
+    }
+    .show-menu {
+        display: block;
+    }
+    .nav {
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        position: fixed;
+        z-index: 10000;
+    }
+    li a img {
         display: none;
-   }
-   .o_nas_napis, .oferta_napis, .cennik_napis, .kontakt_napis {
-       width: 70%;
-  }
-  #cennik > .left-img img {
-      display: none;
- }
- #oferta > .table > .table_yellow_element {
-     width: 80vw;
-     min-height: 20vw;
-}
-#oferta > .table > .table_gray_element {
-    width: 80vw;
-    min-height: 20vw;
-}
-#oferta > .table > #wiersz1, #oferta > .table > #wiersz3, #oferta > .table > #wiersz5, #oferta > .table > #wiersz7, #oferta > .table > #wiersz9 {
-    background-color: #f8bc4a;
-}
-#oferta > .table > #wiersz2, #oferta > .table > #wiersz4, #oferta > .table > #wiersz6, #oferta > .table > #wiersz8, #oferta > .table > #wiersz10 {
-    background-color: #e2e2e2;
-}
-#oferta > .table span {
-    font-size: 7vw;
-}
-#oferta > .table {
-    font-size: 5.5vw;
-}
-#oferta > .top-right-img img {
-    display: none;
-}
-.next_button_darker, .next_button_lighter, .next_button_cennik {
-    width: 40px;
-}
-.start {
-    width: 90%;
-    margin: 5vh auto;
-}
-.galeria img, .galeria video {
-    width: 100%;
-}
-#logo-glowna {
-    height: auto;
-    width: 80%;
-}
-.slider {
-    display: none;
-}
-.slider_back {
-    background-image: url('../img/slider/01.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: calc(100vw/2.0);
-    width: 100%;
-    margin-top: 5vh;
-}
-#ideasfactory:before {
-    content: "Fabryka stron ";
-    position: relative;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    filter: alpha(opacity=0);
-    top: -30px;
-    -webkit-transition: all .5s;
-    transition: all 0.5s;
-}
-#ideasfactory:hover:before {
-    opacity: 1;
-    filter: alpha(opacity=100);
-    top: 0px;
-}
-}
+    }
+    a h2 {
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        filter: alpha(opacity=100);
+        opacity: 1;
+        line-height: 60px;
+        border-color: #f8bc4a;
+        border: 1px solid;
+        border-radius: 1px;
+        background-color: white;
+    }
+    li a {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-top: 0;
+    }
+    .top {
+        height: 148px;
+        opacity: 1;
+        filter: alpha(opacity=100);
+        z-index: 9;
+    }
+    .logo {
+        margin-top: 43px;
+        width: 100%;
+        float: right;
+        margin-bottom: 5px;
+    }
+    .logo img {
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #top {
+        background-color: transparent;
+    }
+    #start {
+        padding: 60px 0% 0%;
+    }
+    .next_button_darker {
+        width: 7vw;
+    }
+    .next_button_lighter {
+        width: 7vw;
+    }
+    .next_button_cennik {
+        width: 7vw;
+        position: relative;
+    }
+    #oferta > .table > .table_yellow_element {
+        width: 36vw;
+        height: 36vw;
+    }
+    #oferta > .table > .table_gray_element {
+        width: 36vw;
+        height: 36vw;
+    }
+    #oferta > .table > #wiersz1, #oferta > .table > #wiersz4, #oferta > .table > #wiersz5, #oferta > .table > #wiersz8, #oferta > .table > #wiersz9 {
+        background-color: #f8bc4a;
+    }
+    #oferta > .table > #wiersz2, #oferta > .table > #wiersz3, #oferta > .table > #wiersz6, #oferta > .table > #wiersz7, #oferta > .table > #wiersz10 {
+        background-color: #e2e2e2;
+    }
+    #oferta > .table > .invisible {
+        display: none;
+    }
+    #oferta > .table span {
+        font-size: 3.5vw;
+    }
+    #oferta > .table {
+        font-size: 2.5vw;
+    }
+    .galeria img, .galeria video {
+        width: 50%;
+    }
+    @media screen and (max-width: 480px) {
+        #o_nas > .top-right-img img {
+            display: none;
+        }
+        .o_nas_napis, .oferta_napis, .cennik_napis, .kontakt_napis {
+            width: 70%;
+        }
+        #cennik > .left-img img {
+            display: none;
+        }
+        #oferta > .table > .table_yellow_element {
+            width: 80vw;
+            min-height: 20vw;
+        }
+        #oferta > .table > .table_gray_element {
+            width: 80vw;
+            min-height: 20vw;
+        }
+        #oferta > .table > #wiersz1, #oferta > .table > #wiersz3, #oferta > .table > #wiersz5, #oferta > .table > #wiersz7, #oferta > .table > #wiersz9 {
+            background-color: #f8bc4a;
+        }
+        #oferta > .table > #wiersz2, #oferta > .table > #wiersz4, #oferta > .table > #wiersz6, #oferta > .table > #wiersz8, #oferta > .table > #wiersz10 {
+            background-color: #e2e2e2;
+        }
+        #oferta > .table span {
+            font-size: 7vw;
+        }
+        #oferta > .table {
+            font-size: 5.5vw;
+        }
+        #oferta > .top-right-img img {
+            display: none;
+        }
+        .next_button_darker, .next_button_lighter, .next_button_cennik {
+            width: 40px;
+        }
+        .start {
+            width: 90%;
+            margin: 5vh auto;
+        }
+        .galeria img, .galeria video {
+            width: 100%;
+        }
+        #logo-glowna {
+            height: auto;
+            width: 80%;
+        }
+        .slider {
+            display: none;
+        }
+        .slider_back {
+            background-image: url('../img/slider/01.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: calc(100vw/2.0);
+            width: 100%;
+            margin-top: 5vh;
+        }
+        #ideasfactory:before {
+            content: "Fabryka stron ";
+            position: relative;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            filter: alpha(opacity=0);
+            top: -30px;
+            -webkit-transition: all .5s;
+            transition: all 0.5s;
+        }
+        #ideasfactory:hover:before {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            top: 0px;
+        }
+    }

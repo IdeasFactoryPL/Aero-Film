@@ -77,6 +77,21 @@
             });
         });
         </script>
+        <script>
+$(document).ready(function(){
+ 
+$('#submit').click(function(){
+ 
+$.post("send.php", $("#mycontactform").serialize(),  function(response) {
+$('#success').html(response);
+//$('#success').hide('slow');
+});
+return false;
+ 
+});
+ 
+});
+</script>
     </head>
     <body>
         <div id="top">
@@ -360,12 +375,14 @@
                 </div>
 
                 <div class="contact">
-                    <form action="">
-                        <input type="text" name="imię" value="IMIĘ">
+                    <form id="mycontactform" action="" method="post">
+                        <input id="name" type="text" name="name" value="IMIĘ">
                         <br>
-                        <input type="text" name="email" value="ADRES E-MAIL">
-                        <textarea name="message" rows="10">WIADOMOŚĆ
+                        <input id="email" type="text" name="email" value="ADRES E-MAIL">
+                        <textarea id="message" name="message" rows="10">WIADOMOŚĆ
                         </textarea>
+                        <input id="submit" type="button" value="send" />
+                        <div id="success" style="color: red;"></div>
                     </form>
                 </div>
 
