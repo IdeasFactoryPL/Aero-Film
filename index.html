@@ -376,13 +376,12 @@ return false;
 
                 <div class="contact">
                     <form id="mycontactform" action="" method="post">
-                        <input id="name" type="text" name="name" value="IMIĘ">
+                        <div id="success" style="color: red;"></div>                    
+                        <input id="name" type="text" name="name" placeholder="IMIĘ">
                         <br>
-                        <input id="email" type="text" name="email" value="ADRES E-MAIL">
-                        <textarea id="message" name="message" rows="10">WIADOMOŚĆ
-                        </textarea>
-                        <input id="submit" type="button" value="send" />
-                        <div id="success" style="color: red;"></div>
+                        <input id="email" type="text" name="email" placeholder="ADRES E-MAIL">
+                        <textarea id="message" name="message" rows="10" placeholder="Wiadomość"></textarea>
+                        <input id="submit" type="button" value="Wyślij" />
                     </form>
                 </div>
 
