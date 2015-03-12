@@ -724,7 +724,7 @@ right: 0px;
         font-size: 2.5vw;
     }
     .galeria img, .galeria video {
-        width: 50%;
+        width: 25%;
     }
     @media screen and (max-width: 480px) {
         #o_nas > .top-right-img img {
@@ -773,6 +773,42 @@ right: 0px;
         .galeria img, .galeria video {
             width: 100%;
         }
+        .galeria > .left_column1x2 {
+            width: 50%;
+        }
+        .galeria > .long_left {
+    width: 100%;
+    height: 27vw;
+}
+.galeria > .left_column2x1 > a > img {
+    width: 100%;
+}
+.galeria > .left_column2x1 {
+    width: 50%;
+    height: 27vw;
+}
+.galeria > .trzy_na_dwa_left {
+    width: 100%;
+    height: 54vw;
+}
+.galeria > .dwa_na_dwa_right {
+    width: 50%;
+    float: right;
+    margin-bottom: 0px;
+    height: 27vw;
+}
+.galeria > .dwa_na_dwa {
+    width: 50%;
+    height: 27vw;
+    float: left;
+    margin-bottom: 0px;
+}
+.galeria > .left_column1x2 {
+    /*width: 25%;*/
+    height: 27vw;
+    float: left;
+    margin-bottom: 0px;
+}
         #logo-glowna {
             height: auto;
             width: 80%;

@@ -130,7 +130,7 @@
 }
 
 #owl-demo .owl-item.active > div img{
-	width: 25vw;
+	width: 125%;
 	-webkit-transition: all 1s; /* For Safari 3.1 to 6.0 */
    transition: all 1s;
 	}
