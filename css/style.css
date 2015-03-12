@@ -26,10 +26,6 @@ body {
     transition: .5s;
     z-index: 999;
 }
-.galeria > .dwa_na_dwa {
-    width: 50%;
-    height: auto;
-}
 .logo {
     width: 15%;
     float: left;
@@ -195,6 +191,11 @@ zmiana powyzsze powinno byc input[type=checkbox]:checked ~ #menu{
 #oferta {
     padding: 5vw;
     background-color: white;
+    background-image: url('../img/oferta_pic1.png');
+    background-repeat: no-repeat;
+    /*background-attachment: fixed;*/
+    background-position: top 2vh right 2vw; 
+    background-size: auto 20vh;
 }
 #galeria {
     padding: 0;
@@ -303,6 +304,8 @@ a {
     height: auto;
     padding: 2%;
     max-width: 450px;
+        position: absolute;
+right: 0px;
 }
 #oferta > .bottom-left-img {
     float: left;
@@ -321,6 +324,7 @@ a {
     font-size: 3vh;
     margin-bottom: 3vh;
     margin-top: 3vh;
+    text-shadow: 0px 0px 5px white, 0px 0px 2px white, 0px 0px 10px white;
 }
 #oferta > .table {
     /*width: 80vw;*/
@@ -415,6 +419,59 @@ a {
     filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="1.1574 -0.14300000000000002 -0.014399999999999996 0 0 -0.0426 1.069 -0.014399999999999996 0 0 -0.0426 -0.14300000000000002 1.1856 0 0 0 0 0 1 0" /></filter></svg>#filter');
     -webkit-filter: saturate(120%);
     filter: saturate(120%);
+}
+.galeria > .dwa_na_dwa {
+    width: 50%;
+    height: 27.6vw;
+    float: left;
+    margin-bottom: 0px;
+}
+.galeria > .dwa_na_dwa > a > img{
+    width: 100%;
+}
+.galeria > .left_column1x2{
+    width: 25%;
+    height: 27.6vw;
+    float: left;
+    margin-bottom: 0px;
+}
+.galeria > .left_column1x2 > a > img{
+    width: 100%;
+}
+.galeria > .long_left{
+    width: 50%;
+    height: 13.8vw;
+    float: left;
+    margin-bottom: 0px;
+}
+.galeria > .long_left > a > img{
+    width: 100%;
+}
+.galeria > .left_column2x1{
+    width: 50%;
+    height: 13.8vw;
+    float:left;
+    margin-bottom: 0px;
+}
+.galeria > .left_column2x1 > a > img{
+    width: 50%;
+}
+.galeria > .dwa_na_dwa_right {
+    width: 50%;
+    height: 27.6vw;
+    float: right;
+    margin-bottom: 0px;
+}
+.galeria > .dwa_na_dwa_right > a > img{
+    width: 100%;
+}
+.galeria > .trzy_na_dwa_left{
+    width: 75%;
+    height: 41.4vw;
+    float:left;
+}
+.galeria > .trzy_na_dwa_left > a > img{
+    width: 100%;
 }
 #cennik > .left-img {
     float: left;
@@ -634,6 +691,15 @@ a {
         width: 7vw;
         position: relative;
     }
+    #oferta {
+    /*padding: 5vw;*/
+    /*background-color: white;*/
+    /*background-image: url('../img/oferta_pic1.png');*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    background-position: top 2vh right 2vw; 
+    background-size: auto 15vh;
+}
     #oferta > .table > .table_yellow_element {
         width: 36vw;
         height: 36vw;
@@ -670,6 +736,10 @@ a {
         #cennik > .left-img img {
             display: none;
         }
+            #oferta {
+    background-image: none;
+
+}
         #oferta > .table > .table_yellow_element {
             width: 80vw;
             min-height: 20vw;
