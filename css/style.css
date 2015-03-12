@@ -574,7 +574,7 @@ right: 0px;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
     filter: alpha(opacity=70);
     opacity: 0.7;
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1), 0 0 2px rgba(255, 255, 255, 1);
     color: #f8bc4a;
     z-index: 5;
     font-size: 14px;
@@ -584,7 +584,7 @@ right: 0px;
     content: "Fabryka stron internetowych ";
     position: relative;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 1), 0 0 2px rgba(255, 255, 255, 1);
     opacity: 0;
     filter: alpha(opacity=0);
     top: -30px;
@@ -675,11 +675,24 @@ right: 0px;
         margin-left: auto;
         margin-right: auto;
     }
+    #logo-glowna {
+/*    display: block;
+    margin: 3% auto;*/
+    height: auto;
+    width: 70%;
+}
     #top {
         background-color: transparent;
     }
+    .o_nas_napis, .oferta_napis, .cennik_napis, .kontakt_napis {
+            width: 60%;
+        }
     #start {
         padding: 60px 0% 0%;
+    }
+    .start{
+      width: 90%;
+      margin: 5vh auto;
     }
     .next_button_darker {
         width: 7vw;
@@ -691,15 +704,23 @@ right: 0px;
         width: 7vw;
         position: relative;
     }
+        #o_nas {
+    /*padding: 5vw;*/
+    /*background-color: white;*/
+    background-image: none;
+}
+#o_nas > .top-right-img img {
+  display: none;
+  }
     #oferta {
     /*padding: 5vw;*/
     /*background-color: white;*/
     /*background-image: url('../img/oferta_pic1.png');*/
     /*background-repeat: no-repeat;*/
     /*background-attachment: fixed;*/
-    background-position: top 2vh right 2vw; 
-    background-size: auto 15vh;
+    background-image: none;
 }
+
     #oferta > .table > .table_yellow_element {
         width: 36vw;
         height: 36vw;
@@ -723,10 +744,20 @@ right: 0px;
     #oferta > .table {
         font-size: 2.5vw;
     }
+    #oferta > .bottom-left-img img {
+      display:none;
+    }
     .galeria img, .galeria video {
         width: 25%;
     }
+    #cennik > .left-img img {
+      display:none;
+    }
+
     @media screen and (max-width: 480px) {
+              #o_nas {
+    background-image: none;
+}
         #o_nas > .top-right-img img {
             display: none;
         }
