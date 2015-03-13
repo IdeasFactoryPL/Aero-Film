@@ -524,6 +524,24 @@ right: 0px;
 .contact input {
     height: 4vh;
 }
+
+.contact #submit {
+	width: 20%;
+	float: right;
+	background: #fff;
+}
+.contact #success {
+	
+	font-family: "Gothic", sans-serif;
+	padding-top: 1vh; 
+	padding-bottom: 1vh; 
+	background: #fff; 
+	width: 100%; 
+	font-size: 3vh; 
+	margin-bottom: 2vh; 
+	min-height: 4vh;
+}
+
 .contact textarea {
     height: 20vh;
     /*padding-top: 8vh;*/
