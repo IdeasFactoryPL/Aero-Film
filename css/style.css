@@ -16,6 +16,9 @@ body {
     font-family: "Gothic", sans-serif;
     font-size: 100%;
 }
+p{
+    font-size: 3vh;
+}
 #top {
     position: fixed;
     filter: alpha(opacity=80);
@@ -280,7 +283,7 @@ a {
     padding: 2%;
 }
 #o_nas > p {
-    font-size: 3vh;
+    /*font-size: 3vh;*/
     margin-bottom: 3vh;
     margin-top: 3vh;
 }
@@ -320,23 +323,18 @@ right: 0px;
     margin-left: -30%;
     margin-top: -35%;
 }
-#oferta p {
-    font-size: 3vh;
+#oferta > p {
     margin-bottom: 3vh;
     margin-top: 3vh;
     text-shadow: 0px 0px 5px white, 0px 0px 2px white, 0px 0px 10px white;
 }
 #oferta > .table {
-    /*width: 80vw;*/
-    
     margin: 0 auto;
     display: table-cell;
     vertical-align: middle;
-    width: 100%;
-    /*padding-left: 5vw;*/
-    
+    width: 100%;    
     text-align: center;
-    font-size: 1vw;
+    font-size: 1.3vw;
 }
 #oferta > .whole_table {
     width: 80vw;
@@ -357,6 +355,7 @@ right: 0px;
 }
 #oferta > .under_table {
     clear: both;
+    margin-top: 20px;
 }
 #oferta > .table > .table_yellow_element {
     float: left;
@@ -396,7 +395,7 @@ right: 0px;
 .galeria {
     width: 100%;
 }
-.galeria img, .galeria video {
+.galeria img {
     float: left;
     width: 25%;
     box-shadow: 0px 0px 3px 1px #fff;
@@ -409,6 +408,10 @@ right: 0px;
     -webkit-filter: saturate(50%);
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+.thevideo{
+    width: 100%;
+    height: 100%;
 }
 .galeria img:hover, .galeria video:hover {
     -webkit-filter: grayscale(0);
@@ -486,7 +489,7 @@ right: 0px;
     padding-bottom: 10%;
 }
 #cennik > p {
-    font-size: 3vh;
+    /*font-size: 3vh;*/
     margin-bottom: 3vh;
     margin-top: 3vh;
 }
@@ -638,6 +641,9 @@ right: 0px;
         display: none;
         z-index: 1;
     }
+    p {
+        font-size: 18px;
+    }
     .slide {
         display: inline;
         max-width: 100%;
@@ -704,6 +710,8 @@ right: 0px;
     }
     .o_nas_napis, .oferta_napis, .cennik_napis, .kontakt_napis {
             width: 60%;
+            font-size: 22px;
+            height: auto;
         }
     #start {
         padding: 60px 0% 0%;
