@@ -1,330 +1,326 @@
 <!doctype html>
 <html lang="pl">
-    <head>
-        <meta charset="UTF-8">
-        <title>Aero-Film.pl</title>
-        <meta name="author" content="IdeasFactory.pl Rafał Petryka">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/lightbox.css">
-        <link rel="stylesheet" href="css/slider.css">
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="shortcut icon" href="favicon.ico">
-        <script src='js/jquery.js'></script>
-        <script src="js/animatescroll.js"></script>
-        <script src="js/lightbox.min.js"></script>
-        <script src="js/movie_hover.js"></script>
-        <script src='js/owl.carousel.min.js'></script>
-        <script src="js/slider.js"></script>
-        
-        <!-- fancybox -->
-        <script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
-        <link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
 
-        <link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
-        <script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
-
-        <link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
-        <script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
-
-        <script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
-        <script>
-                $(document).ready(function(){
-            /**
-            * This part does the "fixed navigation after scroll" functionality
-            * We use the jQuery function scroll() to recalculate our variables as the
-            * page is scrolled/
-            */
-            $(window).scroll(function(){
-                var window_top = $(window).scrollTop() + 12; // the "12" should equal the margin-top value for nav.stick
-                var div_top = $('#nav-anchor').offset().top;
-                    if (window_top > div_top) {
-                        $('.nav').addClass('stick');
-                    } else {
-                        $('.nav').removeClass('stick');
-                    }
-            });
-            /**
-            * This part causes smooth scrolling using scrollto.js
-            * We target all a tags inside the nav, and apply the scrollto.js to it.
-            */
-            $(".nav a").click(function(evn){
-                evn.preventDefault();
-                $('html,body').scrollTo(this.hash, this.hash);
-            });
-            /**
-            * This part handles the highlighting functionality.
-            * We use the scroll functionality again, some array creation and
-            * manipulation, class adding and class removing, and conditional testing
-            */
-            var aChildren = $(".nav li").children(); // find the a children of the list items
-            var aArray = []; // create the empty aArray
-                for (var i=0; i < aChildren.length; i++) {
-                var aChild = aChildren[i];
-                var ahref = $(aChild).attr('href');
-                aArray.push(ahref);
-            } // this for loop fills the aArray with attribute href values
-            $(window).scroll(function(){
-                var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
-                var windowHeight = $(window).height(); // get the height of the window
-                var docHeight = $(document).height();
-                for (var i=0; i < aArray.length; i++) {
-                    var theID = aArray[i];
-                    var divPos = $(theID).offset().top-81; // get the offset of the div from the top of page
-                    var divHeight = $(theID).height(); // get the height of the div in question
-                    if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
-                        $("a[href='" + theID + "']").addClass("nav-active");
-                    } else {
-                        $("a[href='" + theID + "']").removeClass("nav-active");
-                    }
-                }
-                if(windowPos + windowHeight == docHeight) {
-                    if (!$(".nav li:last-child a").hasClass("nav-active")) {
-                        var navActiveCurrent = $(".nav-active").attr("href");
-                        $("a[href='" + navActiveCurrent + "']").removeClass("nav-active");
-                        $(".nav li:last-child a").addClass("nav-active");
-                    }
-                }
-            });
+<head>
+    <meta charset="UTF-8">
+    <title>Aero-Film.pl</title>
+    <meta name="author" content="IdeasFactory.pl Rafał Petryka">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <script src='js/jquery.js'></script>
+    <script src="js/animatescroll.js"></script>
+    <script src="js/lightbox.min.js"></script>
+    <script src="js/movie_hover.js"></script>
+    <script src='js/owl.carousel.min.js'></script>
+    <script src="js/slider.js"></script>
+    <!-- fancybox -->
+    <script type="text/javascript" src="source/jquery.fancybox.js?v=2.1.5"></script>
+    <link rel="stylesheet" type="text/css" href="source/jquery.fancybox.css?v=2.1.5" media="screen" />
+    <link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+    <script type="text/javascript" src="source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+    <link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+    <script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+    <script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+    <script>
+    $(document).ready(function() {
+        /**
+         * This part does the "fixed navigation after scroll" functionality
+         * We use the jQuery function scroll() to recalculate our variables as the
+         * page is scrolled/
+         */
+        $(window).scroll(function() {
+            var window_top = $(window).scrollTop() + 12; // the "12" should equal the margin-top value for nav.stick
+            var div_top = $('#nav-anchor').offset().top;
+            if (window_top > div_top) {
+                $('.nav').addClass('stick');
+            } else {
+                $('.nav').removeClass('stick');
+            }
         });
-        </script>
-        <script type="text/javascript">
-        $(document).ready(function() {
-            /*
-             *  Simple image gallery. Uses default settings
-             */
-
-            $('.fancybox').fancybox();
-
-            /*
-             *  Different effects
-             */
-
-            // Change title type, overlay closing speed
-            $(".fancybox-effects-a").fancybox({
-                helpers: {
-                    title : {
-                        type : 'outside'
-                    },
-                    overlay : {
-                        speedOut : 0
-                    }
-                }
-            });
-
-            // Disable opening and closing animations, change title type
-            $(".fancybox-effects-b").fancybox({
-                openEffect  : 'none',
-                closeEffect : 'none',
-
-                helpers : {
-                    title : {
-                        type : 'over'
-                    }
-                }
-            });
-
-            // Set custom style, close if clicked, change title type and overlay color
-            $(".fancybox-effects-c").fancybox({
-                wrapCSS    : 'fancybox-custom',
-                closeClick : true,
-
-                openEffect : 'none',
-
-                helpers : {
-                    title : {
-                        type : 'inside'
-                    },
-                    overlay : {
-                        css : {
-                            'background' : 'rgba(238,238,238,0.85)'
-                        }
-                    }
-                }
-            });
-
-            // Remove padding, set opening and closing animations, close if clicked and disable overlay
-            $(".fancybox-effects-d").fancybox({
-                padding: 0,
-
-                openEffect : 'elastic',
-                openSpeed  : 150,
-
-                closeEffect : 'elastic',
-                closeSpeed  : 150,
-
-                closeClick : true,
-
-                helpers : {
-                    overlay : null
-                }
-            });
-
-            /*
-             *  Button helper. Disable animations, hide close button, change title type and content
-             */
-
-            $('.fancybox-buttons').fancybox({
-                openEffect  : 'none',
-                closeEffect : 'none',
-
-                prevEffect : 'none',
-                nextEffect : 'none',
-
-                closeBtn  : false,
-
-                helpers : {
-                    title : {
-                        type : 'inside'
-                    },
-                    buttons : {}
-                },
-
-                afterLoad : function() {
-                    this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
-                }
-            });
-
-
-            /*
-             *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
-             */
-
-            $('.fancybox-thumbs').fancybox({
-                prevEffect : 'none',
-                nextEffect : 'none',
-
-                closeBtn  : false,
-                arrows    : false,
-                nextClick : true,
-
-                helpers : {
-                    thumbs : {
-                        width  : 50,
-                        height : 50
-                    }
-                }
-            });
-
-            /*
-             *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
-            */
-            $('.fancybox-media')
-                .attr('rel', 'media-gallery')
-                .fancybox({
-                    openEffect : 'none',
-                    closeEffect : 'none',
-                    prevEffect : 'none',
-                    nextEffect : 'none',
-
-                    arrows : false,
-                    helpers : {
-                        media : {},
-                        buttons : {}
-                    }
-                });
-
-            /*
-             *  Open manually
-             */
-
-            $("#fancybox-manual-a").click(function() {
-                $.fancybox.open('1_b.jpg');
-            });
-
-            $("#fancybox-manual-b").click(function() {
-                $.fancybox.open({
-                    href : 'iframe.html',
-                    type : 'iframe',
-                    padding : 5
-                });
-            });
-
-            $("#fancybox-manual-c").click(function() {
-                $.fancybox.open([
-                    {
-                        href : '1_b.jpg',
-                        title : 'My title'
-                    }, {
-                        href : '2_b.jpg',
-                        title : '2nd title'
-                    }, {
-                        href : '3_b.jpg'
-                    }
-                ], {
-                    helpers : {
-                        thumbs : {
-                            width: 75,
-                            height: 50
-                        }
-                    }
-                });
-            });
-
-
+        /**
+         * This part causes smooth scrolling using scrollto.js
+         * We target all a tags inside the nav, and apply the scrollto.js to it.
+         */
+        $(".nav a").click(function(evn) {
+            evn.preventDefault();
+            $('html,body').scrollTo(this.hash, this.hash);
         });
+        /**
+         * This part handles the highlighting functionality.
+         * We use the scroll functionality again, some array creation and
+         * manipulation, class adding and class removing, and conditional testing
+         */
+        var aChildren = $(".nav li").children(); // find the a children of the list items
+        var aArray = []; // create the empty aArray
+        for (var i = 0; i < aChildren.length; i++) {
+            var aChild = aChildren[i];
+            var ahref = $(aChild).attr('href');
+            aArray.push(ahref);
+        } // this for loop fills the aArray with attribute href values
+        $(window).scroll(function() {
+            var windowPos = $(window).scrollTop(); // get the offset of the window from the top of page
+            var windowHeight = $(window).height(); // get the height of the window
+            var docHeight = $(document).height();
+            for (var i = 0; i < aArray.length; i++) {
+                var theID = aArray[i];
+                var divPos = $(theID).offset().top - 81; // get the offset of the div from the top of page
+                var divHeight = $(theID).height(); // get the height of the div in question
+                if (windowPos >= divPos && windowPos < (divPos + divHeight)) {
+                    $("a[href='" + theID + "']").addClass("nav-active");
+                } else {
+                    $("a[href='" + theID + "']").removeClass("nav-active");
+                }
+            }
+            if (windowPos + windowHeight == docHeight) {
+                if (!$(".nav li:last-child a").hasClass("nav-active")) {
+                    var navActiveCurrent = $(".nav-active").attr("href");
+                    $("a[href='" + navActiveCurrent + "']").removeClass("nav-active");
+                    $(".nav li:last-child a").addClass("nav-active");
+                }
+            }
+        });
+    });
     </script>
-        <script>
-$(document).ready(function(){
- 
-$('#submit').click(function(){
- 
-$.post("send.php", $("#mycontactform").serialize(),  function(response) {
-$('#success').html(response);
-//$('#success').hide('slow');
-});
-return false;
- 
-});
- 
-});
-</script>
-    </head>
-    <body>
-        <div id="top">
-            <div class="logo"><img id="logo" src="img/logo.png">
-            </div>
-            <div class="nav">
-                <label for="show-menu" class="show-menu">Menu</label>
-                <input type="checkbox" id="show-menu" role="button">
-                <div id="nav-anchor"></div>
-                <!-- <nav> -->
-                    <ul id="menu">
-                        <li>
-                            <a href="#start" id="ikona1" onclick="$('body').animatescroll();">
-                            <h2 id="napis1">Start</h2>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#o_nas" id="ikona2" onclick="$('#o_nas').animatescroll();">
-                            <h2 id="napis2">O Nas</h2>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#oferta" id="ikona3" onclick="$('#oferta').animatescroll();">
-                            <h2 id="napis3">Oferta</h2>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#galeria" id="ikona4" onclick="$('#galeria').animatescroll();">
-                            <h2 id="napis4">Galeria</h2>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#cennik" id="ikona5" onclick="$('#cennik').animatescroll();">
-                            <h2 id="napis5">Cennik</h2>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#kontakt" id="ikona6" onclick="$('#kontakt').animatescroll();">
-                            <h2 id="napis6">Kontakt</h2>
-                            </a>
-                        </li>
-                    </ul>
-                <!-- </nav> -->
-            </div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        /*
+         *  Simple image gallery. Uses default settings
+         */
+
+        $('.fancybox').fancybox();
+
+        /*
+         *  Different effects
+         */
+
+        // Change title type, overlay closing speed
+        $(".fancybox-effects-a").fancybox({
+            helpers: {
+                title: {
+                    type: 'outside'
+                },
+                overlay: {
+                    speedOut: 0
+                }
+            }
+        });
+
+        // Disable opening and closing animations, change title type
+        $(".fancybox-effects-b").fancybox({
+            openEffect: 'none',
+            closeEffect: 'none',
+
+            helpers: {
+                title: {
+                    type: 'over'
+                }
+            }
+        });
+
+        // Set custom style, close if clicked, change title type and overlay color
+        $(".fancybox-effects-c").fancybox({
+            wrapCSS: 'fancybox-custom',
+            closeClick: true,
+
+            openEffect: 'none',
+
+            helpers: {
+                title: {
+                    type: 'inside'
+                },
+                overlay: {
+                    css: {
+                        'background': 'rgba(238,238,238,0.85)'
+                    }
+                }
+            }
+        });
+
+        // Remove padding, set opening and closing animations, close if clicked and disable overlay
+        $(".fancybox-effects-d").fancybox({
+            padding: 0,
+
+            openEffect: 'elastic',
+            openSpeed: 150,
+
+            closeEffect: 'elastic',
+            closeSpeed: 150,
+
+            closeClick: true,
+
+            helpers: {
+                overlay: null
+            }
+        });
+
+        /*
+         *  Button helper. Disable animations, hide close button, change title type and content
+         */
+
+        $('.fancybox-buttons').fancybox({
+            openEffect: 'none',
+            closeEffect: 'none',
+
+            prevEffect: 'none',
+            nextEffect: 'none',
+
+            closeBtn: false,
+
+            helpers: {
+                title: {
+                    type: 'inside'
+                },
+                buttons: {}
+            },
+
+            afterLoad: function() {
+                this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+            }
+        });
+
+
+        /*
+         *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+         */
+
+        $('.fancybox-thumbs').fancybox({
+            prevEffect: 'none',
+            nextEffect: 'none',
+
+            closeBtn: false,
+            arrows: false,
+            nextClick: true,
+
+            helpers: {
+                thumbs: {
+                    width: 50,
+                    height: 50
+                }
+            }
+        });
+
+        /*
+         *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
+         */
+        $('.fancybox-media')
+            .attr('rel', 'media-gallery')
+            .fancybox({
+                openEffect: 'none',
+                closeEffect: 'none',
+                prevEffect: 'none',
+                nextEffect: 'none',
+
+                arrows: false,
+                helpers: {
+                    media: {},
+                    buttons: {}
+                }
+            });
+
+        /*
+         *  Open manually
+         */
+
+        $("#fancybox-manual-a").click(function() {
+            $.fancybox.open('1_b.jpg');
+        });
+
+        $("#fancybox-manual-b").click(function() {
+            $.fancybox.open({
+                href: 'iframe.html',
+                type: 'iframe',
+                padding: 5
+            });
+        });
+
+        $("#fancybox-manual-c").click(function() {
+            $.fancybox.open([{
+                href: '1_b.jpg',
+                title: 'My title'
+            }, {
+                href: '2_b.jpg',
+                title: '2nd title'
+            }, {
+                href: '3_b.jpg'
+            }], {
+                helpers: {
+                    thumbs: {
+                        width: 75,
+                        height: 50
+                    }
+                }
+            });
+        });
+
+
+    });
+    </script>
+    <script>
+    $(document).ready(function() {
+
+        $('#submit').click(function() {
+
+            $.post("send.php", $("#mycontactform").serialize(), function(response) {
+                $('#success').html(response);
+                //$('#success').hide('slow');
+            });
+            return false;
+
+        });
+
+    });
+    </script>
+</head>
+
+<body>
+    <div id="top">
+        <div class="logo"><img id="logo" src="img/logo.png">
         </div>
+        <div class="nav">
+            <label for="show-menu" class="show-menu">Menu</label>
+            <input type="checkbox" id="show-menu" role="button">
+            <div id="nav-anchor"></div>
+            <!-- <nav> -->
+            <ul id="menu">
+                <li>
+                    <a href="#start" id="ikona1" onclick="$('body').animatescroll();">
+                        <h2 id="napis1">Start</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#o_nas" id="ikona2" onclick="$('#o_nas').animatescroll();">
+                        <h2 id="napis2">O Nas</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#oferta" id="ikona3" onclick="$('#oferta').animatescroll();">
+                        <h2 id="napis3">Oferta</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#galeria" id="ikona4" onclick="$('#galeria').animatescroll();">
+                        <h2 id="napis4">Galeria</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#cennik" id="ikona5" onclick="$('#cennik').animatescroll();">
+                        <h2 id="napis5">Cennik</h2>
+                    </a>
+                </li>
+                <li>
+                    <a href="#kontakt" id="ikona6" onclick="$('#kontakt').animatescroll();">
+                        <h2 id="napis6">Kontakt</h2>
+                    </a>
+                </li>
+            </ul>
+            <!-- </nav> -->
+        </div>
+    </div>
     </div>
     <section id="start" class="contentpg">
         <img src="img/logo_home.png" alt="logo" id="logo-glowna">
@@ -333,52 +329,52 @@ return false;
                 <div id="owl-demo" class="owl-carousel">
                     <div>
                         <a href="img/slider/01.jpg" data-lightbox="slider">
-                        <img src="img/slider/01.jpg" alt="01">
+                            <img src="img/slider/01.jpg" alt="01">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/02.jpg" data-lightbox="slider">
-                        <img src="img/slider/02.jpg" alt="02">
+                            <img src="img/slider/02.jpg" alt="02">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/03.jpg" data-lightbox="slider">
-                        <img src="img/slider/03.jpg" alt="03">
+                            <img src="img/slider/03.jpg" alt="03">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/04.jpg" data-lightbox="slider">
-                        <img src="img/slider/04.jpg" alt="04">
+                            <img src="img/slider/04.jpg" alt="04">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/05.jpg" data-lightbox="slider">
-                        <img src="img/slider/05.jpg" alt="05">
+                            <img src="img/slider/05.jpg" alt="05">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/06.jpg" data-lightbox="slider">
-                        <img src="img/slider/06.jpg" alt="06">
+                            <img src="img/slider/06.jpg" alt="06">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/07.jpg" data-lightbox="slider">
-                        <img src="img/slider/07.jpg" alt="07">
+                            <img src="img/slider/07.jpg" alt="07">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/08.jpg" data-lightbox="slider">
-                        <img src="img/slider/08.jpg" alt="08">
+                            <img src="img/slider/08.jpg" alt="08">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/09.jpg" data-lightbox="slider">
-                        <img src="img/slider/09.jpg" alt="09">
+                            <img src="img/slider/09.jpg" alt="09">
                         </a>
                     </div>
                     <div>
                         <a href="img/slider/10.jpg" data-lightbox="slider">
-                        <img src="img/slider/10.jpg" alt="10">
+                            <img src="img/slider/10.jpg" alt="10">
                         </a>
                     </div>
                 </div>
@@ -401,33 +397,33 @@ return false;
             O nas
         </div>
         <p>
-        Nasza firma oferuje usługi filmowe oraz fotograficzne z powietrza. Do tej pory fotografia lotnicza była kosztowną i ciężko dostępną usługą ze względu na sprzęt który mógł ją wykonywać. W ostatnich latach Dzięki rozwojowi technologicznemu powstały bezzałogowe statki powietrzne, potocznie zwane dronami Umożliwiają one uzyskanie niepowtarzalnych ujęć w miejscach, gdzie klasyczne obiekty latające takie jak samoloty i śmigłowce nie mogą lub nie są w stanie dotrzeć
+            Nasza firma oferuje usługi filmowe oraz fotograficzne z powietrza. Do tej pory fotografia lotnicza była kosztowną i ciężko dostępną usługą ze względu na sprzęt który mógł ją wykonywać. W ostatnich latach Dzięki rozwojowi technologicznemu powstały bezzałogowe statki powietrzne, potocznie zwane dronami Umożliwiają one uzyskanie niepowtarzalnych ujęć w miejscach, gdzie klasyczne obiekty latające takie jak samoloty i śmigłowce nie mogą lub nie są w stanie dotrzeć
         </p>
         <p>
-        Posiadamy licencje na sterowanie bezzałogowym statkiem powietrznym UAV wydaną przez Urząd Lotnictwa Cywilnego, co gwarantuje bezpieczeństwo naszych usług
+            Posiadamy licencje na sterowanie bezzałogowym statkiem powietrznym UAV wydaną przez Urząd Lotnictwa Cywilnego, co gwarantuje bezpieczeństwo naszych usług
         </p>
         <p class="napis-technologia">
-        Technologia i sprzęt
+            Technologia i sprzęt
         </p>
         <p>
-        Do filmowania i robienia zdjęć wykorzystujemy wysokiej jakości multikoptera(drona). Jest on w stanie osiągnąć prędkość nawet do 18m/s, wzbić się na wysokość kilkuset metrów -jego zasięg to ok. 1km od miejsca w którym stoi operator. Dzięki trzyosiowemu systemowi stabilizującemu obraz jest płynny i odporny na drgania. Standardowo nagrywamy w rozdzielczości <span>(Full HD)</span> 1920x1080p/60 fps lecz na specjalne życzenie możemy nagrać film w wyższej rozdzielczości 2,7K oraz <span>4K</span>. Dzięki systemowi FPV, jesteśmy w stanie odtwarzać obraz na żywo podczas lotu drona. Operator multikoptera w czasie rzeczywistym ma dostęp do podglądu obrazu przekazywanego z kamery, dzięki temu klient może na bieżąco wybierać j najlepsze jego zdaniem ujęcia
+            Do filmowania i robienia zdjęć wykorzystujemy wysokiej jakości multikoptera(drona). Jest on w stanie osiągnąć prędkość nawet do 18m/s, wzbić się na wysokość kilkuset metrów -jego zasięg to ok. 1km od miejsca w którym stoi operator. Dzięki trzyosiowemu systemowi stabilizującemu obraz jest płynny i odporny na drgania. Standardowo nagrywamy w rozdzielczości <span>(Full HD)</span> 1920x1080p/60 fps lecz na specjalne życzenie możemy nagrać film w wyższej rozdzielczości 2,7K oraz <span>4K</span>. Dzięki systemowi FPV, jesteśmy w stanie odtwarzać obraz na żywo podczas lotu drona. Operator multikoptera w czasie rzeczywistym ma dostęp do podglądu obrazu przekazywanego z kamery, dzięki temu klient może na bieżąco wybierać j najlepsze jego zdaniem ujęcia
         </p>
         <a onclick="$('#oferta').animatescroll();" class="next_button_lighter"><img src="img/arrow.png" class="next_button_lighter"></a>
         </a>
     </section>
     <section id="oferta" class="contentpg">
-<!--         <div class="top-right-img">
+        <!--         <div class="top-right-img">
             <img src="img/oferta_pic1.png">
         </div> -->
         <div class="oferta_napis">
             Oferta
         </div>
         <p>
-        Jesteśmy w stanie filmować prawie wszystko bez ograniczeń
-        <br> Dzięki niewielkim rozmiarom drona możliwe są ujęcia w centrach miast, między budynkami a nawet w ich wnętrzu
+            Jesteśmy w stanie filmować prawie wszystko bez ograniczeń
+            <br> Dzięki niewielkim rozmiarom drona możliwe są ujęcia w centrach miast, między budynkami a nawet w ich wnętrzu
         </p>
         <p>
-        Nasze usługi skierowane są praktycznie do każdego. Najczęściej filmowane i fotografowane są:
+            Nasze usługi skierowane są praktycznie do każdego. Najczęściej filmowane i fotografowane są:
         </p>
         <div class="table">
             <div class="table_yellow_element" id="wiersz1">
@@ -490,11 +486,11 @@ return false;
         </div>
         <div class="under_table">
             <p>
-            Jesteśmy w stanie współpracować z mediami (portale informacyjne, telewizja, prasa)
-            <br> Mamy możliwość szybkiego dotarcia na miejsce zdarzenia oraz wysłania materiału bezpośrednio z miejsca wydarzenia
-            <br> Posiadamy polisę oc chroniącą naszych klientów
-            <br> Jesteśmy płatnikiem vat i wystawiamy faktury
-            <br>
+                Jesteśmy w stanie współpracować z mediami (portale informacyjne, telewizja, prasa)
+                <br> Mamy możliwość szybkiego dotarcia na miejsce zdarzenia oraz wysłania materiału bezpośrednio z miejsca wydarzenia
+                <br> Posiadamy polisę oc chroniącą naszych klientów
+                <br> Jesteśmy płatnikiem vat i wystawiamy faktury
+                <br>
             </p>
             <a onclick="$('#galeria').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker"></a>
             </a>
@@ -502,89 +498,103 @@ return false;
     </section>
     <section id="galeria" class="contentpg">
         <div class="galeria">
-            <div class="left_column1x2"><a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a><a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a></div>
-            <div class="dwa_na_dwa"><a class="fancybox-media" href="http://www.youtube.com/watch?v=HUrEN5Ec9xI"><div class="video"><video class="thevideo" loop>
-                                        <source src="img/galeria/1.mp4" type="video/mp4">
-                                            Your browser does not support the video tag.
-                                </video></div></a></div>
+            <div class="left_column1x2">
+                <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
+                <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
+            </div>
+            <div class="dwa_na_dwa">
+                <a class="fancybox-media" href="http://www.youtube.com/watch?v=HUrEN5Ec9xI">
+                    <div class="video">
+                        <video class="thevideo" loop>
+                            <source src="img/galeria/1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </a>
+            </div>
             <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
             <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
-
-            <div class="long_left"><a class="fancybox" data-fancybox-group="gallery" href="img/galeria/long2x1.jpg"><img src="img/galeria/min/long2x1.jpg" alt=""></a></div>
-            <div class="dwa_na_dwa_right"><a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a></div>
-            <div class="left_column2x1"><a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a><a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a></div>
-            
-            <div class="trzy_na_dwa_left"><a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a></div>
+            <div class="long_left">
+                <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/long2x1.jpg"><img src="img/galeria/min/long2x1.jpg" alt=""></a>
+            </div>
+            <div class="dwa_na_dwa_right">
+                <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
+            </div>
+            <div class="left_column2x1">
+                <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
+                <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
+            </div>
+            <div class="trzy_na_dwa_left">
+                <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
+            </div>
             <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
             <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
             <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
-
-            <div class="dwa_na_dwa"><a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a></div>
-            <div class="dwa_na_dwa_right"><a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a></div>
+            <div class="dwa_na_dwa">
+                <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
+            </div>
+            <div class="dwa_na_dwa_right">
+                <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
+            </div>
             <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
-
-            <div class="long_left"><a class="fancybox" data-fancybox-group="gallery" href="img/galeria/long2x1.jpg"><img src="img/galeria/min/long2x1.jpg" alt=""></a></div>
+            <div class="long_left">
+                <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/long2x1.jpg"><img src="img/galeria/min/long2x1.jpg" alt=""></a>
+            </div>
             <a class="fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg"><img src="img/galeria/min/1.jpg" alt=""></a>
     </section>
-        <section id="cennik" class="contentpg">
-            <div class="cennik_napis">
-                Cennik
-            </div>
-            <div class="left-img">
-                <img src="img/cennik_pic.png">
-            </div>
-            <p>
+    <section id="cennik" class="contentpg">
+        <div class="cennik_napis">
+            Cennik
+        </div>
+        <div class="left-img">
+            <img src="img/cennik_pic.png">
+        </div>
+        <p>
             każde zlecenie rozpatrujemy indywidualnie
             <br> cena uzależniona jest od dostępności obiektu, warunków atmosferycznych, poziomu trudności zlecenia oraz długości filmu i ilości wykonanych zdjęć
-            </p>
-            <p>
+        </p>
+        <p>
             ceny za sesje fotograficzną zaczynają się od <span>300</span> zł
             <br> istnieje możliwość obróbki zdjęć
             <br> materiał filmowy bez obróbki - od <span>500</span> zł
             <br> pełen film - montaż ujęć ,podkład muzyczny, obróbka wizualna - od <span>800</span> zł
-            </p>
-            <p class="cennik_end">
+        </p>
+        <p class="cennik_end">
             wszystkie ceny są cenami netto
-            </p>
-            <a onclick="$('#kontakt').animatescroll();" class="next_button_cennik"><img src="img/arrow.png" class="next_button_cennik"></a>
-        </section>
-        <section id="kontakt" class="contentpg">
-            <div class="kontakt_napis">
-                Kontakt
+        </p>
+        <a onclick="$('#kontakt').animatescroll();" class="next_button_cennik"><img src="img/arrow.png" class="next_button_cennik"></a>
+    </section>
+    <section id="kontakt" class="contentpg">
+        <div class="kontakt_napis">
+            Kontakt
+        </div>
+        <div id="left-contact">
+            <div class="contact">
+                <p>AERO - FILM</p>
+                <p>ŁOMIANKI (K. WARSZAWY)</p>
             </div>
-
-            <div id="left-contact">
-                <div class="contact">
-                    <p>AERO - FILM</p>
-                    <p>ŁOMIANKI (K. WARSZAWY)</p>
-                </div>
-
-                <div class="contact">
-                    <p>+48 609 275 751</p>
-                    <p>+48 607 772 770</p>
-                    <p>KONTAKT@AERO-FILM.PL</p>
-                </div>
-
-                <div class="contact">
-                    <form id="mycontactform" action="" method="post">
-                        <div id="success" style="color: black;"></div>                    
-                        <input id="name" type="text" name="name" placeholder="IMIĘ">
-                        <br>
-                        <input id="email" type="text" name="email" placeholder="ADRES E-MAIL">
-                        <textarea id="message" name="message" rows="10" placeholder="Wiadomość"></textarea>
-                        <input id="submit" type="button" value="Wyślij" />
-                    </form>
-                </div>
-
+            <div class="contact">
+                <p>+48 609 275 751</p>
+                <p>+48 607 772 770</p>
+                <p>KONTAKT@AERO-FILM.PL</p>
             </div>
-
-            <div id="right-contact">
-                <div id="temp">
-                </div>
+            <div class="contact">
+                <form id="mycontactform" action="" method="post">
+                    <div id="success" style="color: black;"></div>
+                    <input id="name" type="text" name="name" placeholder="IMIĘ">
+                    <br>
+                    <input id="email" type="text" name="email" placeholder="ADRES E-MAIL">
+                    <textarea id="message" name="message" rows="10" placeholder="Wiadomość"></textarea>
+                    <input id="submit" type="button" value="Wyślij" />
+                </form>
             </div>
-
-        </section>
-        <!--
+        </div>
+        <div id="right-contact">
+            <div id="temp">
+            </div>
+        </div>
+    </section>
+    <!--
         Slider do facebooka, przyda się później
         <div id="face-slider">
                 <div id="tab"></div>
@@ -599,6 +609,6 @@ return false;
         });
         </script>
         -->
-        <a href="http://ideasfactory.pl" target="_blank" id="ideasfactory">© IdeasFactory.pl</p>
+    <a href="http://ideasfactory.pl" target="_blank" id="ideasfactory">© IdeasFactory.pl</p>
     </body>
 </html>

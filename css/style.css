@@ -1,24 +1,29 @@
 a.nav-active {
     color: #f8bc4a;
 }
+
 @charset"UTF-8";
 @font-face {
     font-family: "Gothic";
     src: url(../font/gothic.eot);
     src: url(../font/gothic.eot?#iefix) format("embedded-opentype"), url(../font/gothic.woff) format("woff"), url(../font/gothic.ttf) format("truetype"), url(../font/gothic.svg#svgFontName) format("svg");
 }
+
 @font-face {
     font-family: "Gothic-Bold";
     src: url(../font/gothic-bold.eot);
     src: url(../font/gothic-bold.eot?#iefix) format("embedded-opentype"), url(../font/gothic-bold.woff) format("woff"), url(../font/gothic-bold.ttf) format("truetype"), url(../font/gothic-bold.svg#svgFontName) format("svg");
 }
+
 body {
     font-family: "Gothic", sans-serif;
     font-size: 100%;
 }
-p{
+
+p {
     font-size: 3vh;
 }
+
 #top {
     position: fixed;
     filter: alpha(opacity=80);
@@ -29,15 +34,18 @@ p{
     transition: .5s;
     z-index: 999;
 }
+
 .logo {
     width: 15%;
     float: left;
     margin-left: 5%;
 }
+
 .logo img {
     margin-top: 10px;
     height: 60px;
 }
+
 #logo-glowna {
     display: block;
     margin-left: auto;
@@ -47,6 +55,7 @@ p{
     height: 25vh;
     width: auto;
 }
+
 .nav {
     width: 60%;
     height: 70px;
@@ -56,11 +65,13 @@ p{
     text-align: center;
     border-bottom: solid 1px;
 }
+
 li {
     display: inline-block;
     margin-right: 1px;
     width: 12%;
 }
+
 li a {
     color: #000;
     cursor: pointer;
@@ -71,9 +82,11 @@ li a {
     text-align: center;
     text-decoration: none;
 }
+
 li a:hover {
     color: #f8bc4a;
 }
+
 li a img {
     min-width: 30px;
     width: 20%;
@@ -81,25 +94,32 @@ li a img {
     height: auto;
     margin-top: 10px;
 }
+
 li a h2 {
     font-family: "Gothic";
     transition: color .3s;
 }
+
 li ul {
     display: none;
 }
+
 li ul li {
     display: block;
     float: none;
 }
+
 li ul li a {
     width: auto;
     min-width: 100px;
     padding: 0 20px;
 }
-ul li a:hover + .hidden, .hidden:hover {
+
+ul li a:hover + .hidden,
+.hidden:hover {
     display: block;
 }
+
 .next_button_darker {
     margin: 5vh auto 0 auto;
     display: block;
@@ -109,10 +129,12 @@ ul li a:hover + .hidden, .hidden:hover {
     transition: all .5s ease;
     cursor: pointer;
 }
+
 .next_button_darker:hover {
     -webkit-filter: brightness(95%);
     filter: brightness(95%);
 }
+
 .next_button_lighter {
     margin: 5vh auto 0 auto;
     display: block;
@@ -122,10 +144,12 @@ ul li a:hover + .hidden, .hidden:hover {
     transition: all .5s ease;
     cursor: pointer;
 }
+
 .next_button_lighter:hover {
     -webkit-filter: brightness(140%);
     filter: brightness(140%);
 }
+
 .next_button_cennik {
     margin: 0px auto;
     /*display: block;*/
@@ -141,21 +165,25 @@ ul li a:hover + .hidden, .hidden:hover {
     margin-left: auto;
     margin-right: auto;
 }
+
 .next_button_cennik:hover {
     -webkit-filter: brightness(95%);
     filter: brightness(95%);
 }
+
 .slider {
     height: 100%;
     width: 70%;
     margin-left: 15%;
 }
+
 .slider_back {
     height: 16.75vw;
     background-color: #e2e2e2;
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
 .show-menu {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
@@ -165,9 +193,11 @@ ul li a:hover + .hidden, .hidden:hover {
     padding: 10px 0;
     display: none;
 }
+
 input[type=checkbox] {
     display: none;
 }
+
 input[type=checkbox]:checked ~ #menu {
     display: block;
 }
@@ -183,33 +213,41 @@ zmiana powyzsze powinno byc input[type=checkbox]:checked ~ #menu{
     overflow-x: hidden;
     padding: 5% 5%;
 }
+
 #start {
     padding: 100px 0% 0% 0%;
     background-color: white;
 }
+
 #o_nas {
     padding: 5% 10%;
     background-color: #e2e2e2;
 }
+
 #oferta {
     padding: 5vw;
     background-color: white;
     background-image: url('../img/oferta_pic1.png');
     background-repeat: no-repeat;
     /*background-attachment: fixed;*/
-    background-position: top 2vh right 2vw; 
+    
+    background-position: top 2vh right 2vw;
     background-size: auto 20vh;
 }
+
 #galeria {
     padding: 0;
     background-color: white;
 }
+
 #cennik {
     background-color: white;
 }
+
 #kontakt {
     background-color: #e2e2e2;
 }
+
 .clearfix:after {
     content: ".";
     display: block;
@@ -218,20 +256,28 @@ zmiana powyzsze powinno byc input[type=checkbox]:checked ~ #menu{
     line-height: 0;
     height: 0;
 }
+
 .clearfix {
     display: inline-block;
 }
+
 html[xmlns] .clearfix {
     display: block;
 }
+
 * html .clearfix {
     height: 1%;
 }
+
 a {
     position: relative;
     display: block;
 }
-.o_nas_napis, .oferta_napis, .cennik_napis, .kontakt_napis {
+
+.o_nas_napis,
+.oferta_napis,
+.cennik_napis,
+.kontakt_napis {
     opacity: .8;
     margin: auto;
     text-align: center;
@@ -245,6 +291,7 @@ a {
     margin-bottom: 3vh;
     border-bottom: solid 2px;
 }
+
 .start {
     margin: auto;
     text-align: center;
@@ -255,66 +302,80 @@ a {
     font-size: 4vh;
     color: #000;
 }
+
 .start span {
     color: #f8bc4a;
 }
+
 .start b {
     color: #f8bc4a;
     font-weight: 700;
     text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 10px #fff;
 }
+
 .start h1 {
     font-size: 6vh;
     text-transform: uppercase;
     margin-bottom: 3vh;
 }
+
 #o_nas >.o_nas_napis {
     border-bottom: solid 2px white;
 }
+
 #o_nas > .top-right-img {
     float: right;
     position: absloute;
     margin-top: -5%;
 }
+
 #o_nas > .top-right-img img {
     float: right;
     width: 25vw;
     height: auto;
     padding: 2%;
 }
+
 #o_nas > p {
     /*font-size: 3vh;*/
+    
     margin-bottom: 3vh;
     margin-top: 3vh;
 }
+
 #o_nas > .napis-technologia {
     font-family: "Gothic-Bold";
     display: inline;
     border-bottom: 2px solid white;
     margin-bottom: 3vh;
 }
+
 #o_nas > p > span {
     color: #f8bc4a;
 }
+
 #oferta > .top-right-img {
     float: right;
     position: absloute;
     margin-top: -5%;
 }
+
 #oferta > .top-right-img img {
     float: right;
     width: 25vw;
     height: auto;
     padding: 2%;
     max-width: 450px;
-        position: absolute;
-right: 0px;
+    position: absolute;
+    right: 0px;
 }
+
 #oferta > .bottom-left-img {
     float: left;
     position: absloute;
     margin-top: -5%;
 }
+
 #oferta > .bottom-left-img img {
     float: left;
     width: 25vw;
@@ -323,19 +384,22 @@ right: 0px;
     margin-left: -30%;
     margin-top: -35%;
 }
+
 #oferta > p {
     margin-bottom: 3vh;
     margin-top: 3vh;
     text-shadow: 0px 0px 5px white, 0px 0px 2px white, 0px 0px 10px white;
 }
+
 #oferta > .table {
     margin: 0 auto;
     display: table-cell;
     vertical-align: middle;
-    width: 100%;    
+    width: 100%;
     text-align: center;
     font-size: 1.3vw;
 }
+
 #oferta > .whole_table {
     width: 80vw;
     margin: 0 auto;
@@ -346,6 +410,7 @@ right: 0px;
     text-align: center;
     font-size: 1vw;
 }
+
 .middle {
     display: table-cell;
     vertical-align: middle;
@@ -353,10 +418,12 @@ right: 0px;
     margin: 0 auto;
     text-align: center;
 }
+
 #oferta > .under_table {
     clear: both;
     margin-top: 20px;
 }
+
 #oferta > .table > .table_yellow_element {
     float: left;
     width: 14.75vw;
@@ -367,6 +434,7 @@ right: 0px;
     margin: 1.5vw 1.5vw;
     padding: 2vw;
 }
+
 #oferta > .table > .table_gray_element {
     float: left;
     width: 14.75vw;
@@ -377,6 +445,7 @@ right: 0px;
     margin: 1.5vw 1.5vw;
     padding: 2vw;
 }
+
 #oferta > .table > .invisible {
     float: left;
     width: 14.75vw;
@@ -386,15 +455,18 @@ right: 0px;
     margin: 1.5vw 1.5vw;
     padding: 2vw;
 }
+
 #oferta > .table span {
     font-size: 1.5vw;
     font-weight: bold;
     margin-bottom: .7vw;
     display: inline-block;
 }
+
 .galeria {
     width: 100%;
 }
+
 .galeria img {
     float: left;
     width: 25%;
@@ -409,11 +481,14 @@ right: 0px;
     -webkit-transition: all 0.5s ease;
     transition: all 0.5s ease;
 }
-.thevideo{
+
+.thevideo {
     width: 100%;
     height: 100%;
 }
-.galeria img:hover, .galeria video:hover {
+
+.galeria img:hover,
+.galeria video:hover {
     -webkit-filter: grayscale(0);
     -webkit-filter: saturate(120%);
     filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feColorMatrix type="matrix" color-interpolation-filters="sRGB" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" /></filter></svg>#filter');
@@ -423,64 +498,78 @@ right: 0px;
     -webkit-filter: saturate(120%);
     filter: saturate(120%);
 }
+
 .galeria > .dwa_na_dwa {
     width: 50%;
     height: 27.6vw;
     float: left;
     margin-bottom: 0px;
 }
-.galeria > .dwa_na_dwa > a > img{
+
+.galeria > .dwa_na_dwa > a > img {
     width: 100%;
 }
-.galeria > .left_column1x2{
+
+.galeria > .left_column1x2 {
     width: 25%;
     height: 27.6vw;
     float: left;
     margin-bottom: 0px;
 }
-.galeria > .left_column1x2 > a > img{
+
+.galeria > .left_column1x2 > a > img {
     width: 100%;
 }
-.galeria > .long_left{
+
+.galeria > .long_left {
     width: 50%;
     height: 13.8vw;
     float: left;
     margin-bottom: 0px;
 }
-.galeria > .long_left > a > img{
+
+.galeria > .long_left > a > img {
     width: 100%;
 }
-.galeria > .left_column2x1{
+
+.galeria > .left_column2x1 {
     width: 50%;
     height: 13.8vw;
-    float:left;
+    float: left;
     margin-bottom: 0px;
 }
-.galeria > .left_column2x1 > a > img{
+
+.galeria > .left_column2x1 > a > img {
     width: 50%;
 }
+
 .galeria > .dwa_na_dwa_right {
     width: 50%;
     height: 27.6vw;
     float: right;
     margin-bottom: 0px;
 }
-.galeria > .dwa_na_dwa_right > a > img{
+
+.galeria > .dwa_na_dwa_right > a > img {
     width: 100%;
 }
-.galeria > .trzy_na_dwa_left{
+
+.galeria > .trzy_na_dwa_left {
     width: 75%;
     height: 41.4vw;
-    float:left;
+    float: left;
 }
-.galeria > .trzy_na_dwa_left > a > img{
+
+.galeria > .trzy_na_dwa_left > a > img {
     width: 100%;
 }
+
 #cennik > .left-img {
     float: left;
     position: absloute;
     margin-top: -5%;
 }
+
 #cennik > .left-img img {
     float: left;
     width: auto;
@@ -488,14 +577,16 @@ right: 0px;
     padding-right: 20%;
     padding-bottom: 10%;
 }
+
 #cennik > p {
-    /*font-size: 3vh;*/
     margin-bottom: 3vh;
     margin-top: 3vh;
 }
+
 #cennik > p > span {
     color: #f8bc4a;
 }
+
 #cennik > .cennik_end {
     margin-bottom: 7vh;
 }
@@ -504,18 +595,22 @@ right: 0px;
 .kontakt_napis {
     border-bottom: solid 2px white;
 }
+
 #left-contact {
     float: left;
     width: 45%;
     margin: 0 auto;
 }
+
 .contact {
     margin: 0 auto;
     font-size: 3vh;
     margin-bottom: 4vh;
     margin-top: 4vh;
 }
-.contact input, .contact textarea {
+
+.contact input,
+.contact textarea {
     background: #f9bd3c;
     font-family: "Gothic", sans-serif;
     width: 100%;
@@ -524,39 +619,34 @@ right: 0px;
     border-width: 0px;
     border: none;
 }
+
 .contact input {
     height: 4vh;
 }
 
 .contact #submit {
-	width: auto;
-	float: right;
-	background: #fff;
+    width: auto;
+    float: right;
+    background: #fff;
 }
-.contact #success {
-	
-/*	font-family: "Gothic", sans-serif;
-	padding-top: 1vh; 
-	padding-bottom: 1vh; 
-	background: #fff; 
-	width: 100%; 
-	font-size: 3vh; 
-	margin-bottom: 2vh; 
-	min-height: 4vh;*/
-}
+
+.contact #success {}
 
 .contact textarea {
     height: 20vh;
     /*padding-top: 8vh;*/
 }
+
 #formulaz {
     width: 50%;
     margin: 0 auto;
 }
+
 #right-contact {
     float: right;
     width: 45%;
 }
+
 #right-contact #temp {
     width: auto;
     height: 70vh;
@@ -564,12 +654,14 @@ right: 0px;
     margin: 0 auto;
     margin-top: 5vh;
 }
+
 #face-slider {
     position: fixed;
     right: -302px;
     top: 190px;
     z-index: 100;
 }
+
 #face-slider #tab {
     cursor: pointer;
     height: 50px;
@@ -577,6 +669,7 @@ right: 0px;
     float: left;
     background: url(../img/button_fb.png) no-repeat center center;
 }
+
 #face-code {
     padding: 5px;
     border: solid #3B579D 3px;
@@ -586,6 +679,7 @@ right: 0px;
     height: 296px;
     border-radius: 0 0 0 8px;
 }
+
 #ideasfactory {
     position: fixed;
     right: 2vh;
@@ -601,6 +695,7 @@ right: 0px;
     font-size: 14px;
     text-decoration: none;
 }
+
 #ideasfactory:before {
     content: "Fabryka stron internetowych ";
     position: relative;
@@ -612,14 +707,17 @@ right: 0px;
     -webkit-transition: all .5s;
     transition: all 0.5s;
 }
+
 #ideasfactory:hover:before {
     opacity: 1;
     filter: alpha(opacity=100);
     top: 0px;
 }
+
 .customNavigation {
     text-align: center;
 }
+
 .customNavigation a {
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -628,12 +726,6 @@ right: 0px;
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
-/*@media screen and (min-width: 761px) and (max-width: 1024px) {
-    li {
-        margin-right: 1px;
-        width: 16%;
-   }
-}*/
 
 @media screen and (max-width: 850px) {
     ul {
@@ -650,7 +742,8 @@ right: 0px;
         height: auto;
         z-index: 5;
     }
-    ul li, li a {
+    ul li,
+    li a {
         width: 100%;
         z-index: 1;
     }
@@ -700,25 +793,26 @@ right: 0px;
         margin-right: auto;
     }
     #logo-glowna {
-/*    display: block;
-    margin: 3% auto;*/
-    height: auto;
-    width: 70%;
-}
+        height: auto;
+        width: 70%;
+    }
     #top {
         background-color: transparent;
     }
-    .o_nas_napis, .oferta_napis, .cennik_napis, .kontakt_napis {
-            width: 60%;
-            font-size: 22px;
-            height: auto;
-        }
+    .o_nas_napis,
+    .oferta_napis,
+    .cennik_napis,
+    .kontakt_napis {
+        width: 60%;
+        font-size: 22px;
+        height: auto;
+    }
     #start {
         padding: 60px 0% 0%;
     }
-    .start{
-      width: 90%;
-      margin: 5vh auto;
+    .start {
+        width: 90%;
+        margin: 5vh auto;
     }
     .next_button_darker {
         width: 7vw;
@@ -730,23 +824,15 @@ right: 0px;
         width: 7vw;
         position: relative;
     }
-        #o_nas {
-    /*padding: 5vw;*/
-    /*background-color: white;*/
-    background-image: none;
-}
-#o_nas > .top-right-img img {
-  display: none;
-  }
+    #o_nas {
+        background-image: none;
+    }
+    #o_nas > .top-right-img img {
+        display: none;
+    }
     #oferta {
-    /*padding: 5vw;*/
-    /*background-color: white;*/
-    /*background-image: url('../img/oferta_pic1.png');*/
-    /*background-repeat: no-repeat;*/
-    /*background-attachment: fixed;*/
-    background-image: none;
-}
-
+        background-image: none;
+    }
     #oferta > .table > .table_yellow_element {
         width: 36vw;
         height: 36vw;
@@ -755,10 +841,18 @@ right: 0px;
         width: 36vw;
         height: 36vw;
     }
-    #oferta > .table > #wiersz1, #oferta > .table > #wiersz4, #oferta > .table > #wiersz5, #oferta > .table > #wiersz8, #oferta > .table > #wiersz9 {
+    #oferta > .table > #wiersz1,
+    #oferta > .table > #wiersz4,
+    #oferta > .table > #wiersz5,
+    #oferta > .table > #wiersz8,
+    #oferta > .table > #wiersz9 {
         background-color: #f8bc4a;
     }
-    #oferta > .table > #wiersz2, #oferta > .table > #wiersz3, #oferta > .table > #wiersz6, #oferta > .table > #wiersz7, #oferta > .table > #wiersz10 {
+    #oferta > .table > #wiersz2,
+    #oferta > .table > #wiersz3,
+    #oferta > .table > #wiersz6,
+    #oferta > .table > #wiersz7,
+    #oferta > .table > #wiersz10 {
         background-color: #e2e2e2;
     }
     #oferta > .table > .invisible {
@@ -771,141 +865,152 @@ right: 0px;
         font-size: 2.5vw;
     }
     #oferta > .bottom-left-img img {
-      display:none;
+        display: none;
     }
-    .galeria img, .galeria video {
+    .galeria img,
+    .galeria video {
         width: 25%;
     }
     #cennik > .left-img img {
-      display:none;
+        display: none;
     }
-
-	#left-contact {
-		clear: both;
-		width: 100%;
-	}
-	
-	#right-contact {
-		clear: both;
-		width: 100%;
-	}
-	
-	
-    @media screen and (max-width: 480px) {
-              #o_nas {
-    background-image: none;
-}
-        #o_nas > .top-right-img img {
-            display: none;
-        }
-        .o_nas_napis, .oferta_napis, .cennik_napis, .kontakt_napis {
-            width: 70%;
-        }
-        #cennik > .left-img img {
-            display: none;
-        }
-            #oferta {
-    background-image: none;
-
-}
-        #oferta > .table > .table_yellow_element {
-            width: 80vw;
-            min-height: 20vw;
-        }
-        #oferta > .table > .table_gray_element {
-            width: 80vw;
-            min-height: 20vw;
-        }
-        #oferta > .table > #wiersz1, #oferta > .table > #wiersz3, #oferta > .table > #wiersz5, #oferta > .table > #wiersz7, #oferta > .table > #wiersz9 {
-            background-color: #f8bc4a;
-        }
-        #oferta > .table > #wiersz2, #oferta > .table > #wiersz4, #oferta > .table > #wiersz6, #oferta > .table > #wiersz8, #oferta > .table > #wiersz10 {
-            background-color: #e2e2e2;
-        }
-        #oferta > .table span {
-            font-size: 7vw;
-        }
-        #oferta > .table {
-            font-size: 5.5vw;
-        }
-        #oferta > .top-right-img img {
-            display: none;
-        }
-        .next_button_darker, .next_button_lighter, .next_button_cennik {
-            width: 40px;
-        }
-        .start {
-            width: 90%;
-            margin: 5vh auto;
-        }
-        .galeria img, .galeria video {
-            width: 100%;
-        }
-        .galeria > .left_column1x2 {
-            width: 50%;
-        }
-        .galeria > .long_left {
-    width: 100%;
-    height: 27vw;
-}
-.galeria > .left_column2x1 > a > img {
-    width: 100%;
-}
-.galeria > .left_column2x1 {
-    width: 50%;
-    height: 27vw;
-}
-.galeria > .trzy_na_dwa_left {
-    width: 100%;
-    height: 54vw;
-}
-.galeria > .dwa_na_dwa_right {
-    width: 50%;
-    float: right;
-    margin-bottom: 0px;
-    height: 27vw;
-}
-.galeria > .dwa_na_dwa {
-    width: 50%;
-    height: 27vw;
-    float: left;
-    margin-bottom: 0px;
-}
-.galeria > .left_column1x2 {
-    /*width: 25%;*/
-    height: 27vw;
-    float: left;
-    margin-bottom: 0px;
-}
-        #logo-glowna {
-            height: auto;
-            width: 80%;
-        }
-        .slider {
-            display: none;
-        }
-        .slider_back {
-            background-image: url('../img/slider/01.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: calc(100vw/2.0);
-            width: 100%;
-            margin-top: 5vh;
-        }
-        #ideasfactory:before {
-            content: "Fabryka stron ";
-            position: relative;
-            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-            text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            opacity: 0;
-            filter: alpha(opacity=0);
-            top: -30px;
-            -webkit-transition: all .5s;
-            transition: all 0.5s;
-        }
-        #ideasfactory:hover:before {
-            opacity: 1;
-            filter: alpha(opacity=100);
-            top: 0px;
-        }
+    #left-contact {
+        clear: both;
+        width: 100%;
     }
+    #right-contact {
+        clear: both;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #o_nas {
+        background-image: none;
+    }
+    #o_nas > .top-right-img img {
+        display: none;
+    }
+    .o_nas_napis,
+    .oferta_napis,
+    .cennik_napis,
+    .kontakt_napis {
+        width: 70%;
+    }
+    #cennik > .left-img img {
+        display: none;
+    }
+    #oferta {
+        background-image: none;
+    }
+    #oferta > .table > .table_yellow_element {
+        width: 80vw;
+        min-height: 20vw;
+    }
+    #oferta > .table > .table_gray_element {
+        width: 80vw;
+        min-height: 20vw;
+    }
+    #oferta > .table > #wiersz1,
+    #oferta > .table > #wiersz3,
+    #oferta > .table > #wiersz5,
+    #oferta > .table > #wiersz7,
+    #oferta > .table > #wiersz9 {
+        background-color: #f8bc4a;
+    }
+    #oferta > .table > #wiersz2,
+    #oferta > .table > #wiersz4,
+    #oferta > .table > #wiersz6,
+    #oferta > .table > #wiersz8,
+    #oferta > .table > #wiersz10 {
+        background-color: #e2e2e2;
+    }
+    #oferta > .table span {
+        font-size: 7vw;
+    }
+    #oferta > .table {
+        font-size: 5.5vw;
+    }
+    #oferta > .top-right-img img {
+        display: none;
+    }
+    .next_button_darker,
+    .next_button_lighter,
+    .next_button_cennik {
+        width: 40px;
+    }
+    .start {
+        width: 90%;
+        margin: 5vh auto;
+    }
+    .galeria img,
+    .galeria video {
+        width: 100%;
+    }
+    .galeria > .left_column1x2 {
+        width: 50%;
+    }
+    .galeria > .long_left {
+        width: 100%;
+        height: 27vw;
+    }
+    .galeria > .left_column2x1 > a > img {
+        width: 100%;
+    }
+    .galeria > .left_column2x1 {
+        width: 50%;
+        height: 27vw;
+    }
+    .galeria > .trzy_na_dwa_left {
+        width: 100%;
+        height: 54vw;
+    }
+    .galeria > .dwa_na_dwa_right {
+        width: 50%;
+        float: right;
+        margin-bottom: 0px;
+        height: 27vw;
+    }
+    .galeria > .dwa_na_dwa {
+        width: 50%;
+        height: 27vw;
+        float: left;
+        margin-bottom: 0px;
+    }
+    .galeria > .left_column1x2 {
+        height: 27vw;
+        float: left;
+        margin-bottom: 0px;
+    }
+    #logo-glowna {
+        height: auto;
+        width: 80%;
+    }
+    .slider {
+        display: none;
+    }
+    .slider_back {
+        background-image: url('../img/slider/01.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: calc(100vw/2.0);
+        width: 100%;
+        margin-top: 5vh;
+    }
+    #ideasfactory:before {
+        content: "Fabryka stron ";
+        position: relative;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        filter: alpha(opacity=0);
+        top: -30px;
+        -webkit-transition: all .5s;
+        transition: all 0.5s;
+    }
+    #ideasfactory:hover:before {
+        opacity: 1;
+        filter: alpha(opacity=100);
+        top: 0px;
+    }
+}
