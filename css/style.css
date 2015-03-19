@@ -529,7 +529,7 @@ right: 0px;
 }
 
 .contact #submit {
-	width: 20%;
+	width: auto;
 	float: right;
 	background: #fff;
 }
@@ -780,6 +780,17 @@ right: 0px;
       display:none;
     }
 
+	#left-contact {
+		clear: both;
+		width: 100%;
+	}
+	
+	#right-contact {
+		clear: both;
+		width: 100%;
+	}
+	
+	
     @media screen and (max-width: 480px) {
               #o_nas {
     background-image: none;
