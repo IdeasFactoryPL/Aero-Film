@@ -11,8 +11,8 @@ $message = str_replace("\n",'<br>',$message);
 
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) { // this line checks that we have a valid email address
     mail($to, $subject, $message, $headers); //This method sends the mail.
-	echo "Dziękujemy, wiadomość została wysłana!"; // success message
+	echo "<p style='background: white;padding-bottom: 6px;padding-top: 5px;padding-left: 10px;margin-bottom:2vh'>Dziękujemy, wiadomość została wysłana!</p>"; // success message
 }else{
-	echo "Niestety podałeś niepoprawny adres email";
+	echo "<p style='background: white;padding-bottom: 6px;padding-top: 5px;padding-left: 10px;margin-bottom:2vh'>Niestety podałeś niepoprawny adres email</p>";
 }
 ?>
