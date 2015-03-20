@@ -867,10 +867,10 @@ a {
     #oferta > .bottom-left-img img {
         display: none;
     }
-    .galeria img,
+/*    .galeria img,
     .galeria video {
         width: 25%;
-    }
+    }*/
     #cennik > .left-img img {
         display: none;
     }
@@ -882,6 +882,25 @@ a {
         clear: both;
         width: 100%;
     }
+    .contact {
+    margin: 2vh auto 0;
+    font-size: 18px;
+    }
+    .contact input, .contact textarea {
+        font-size: 18px;
+    }
+    .contact input {
+        height: 18px;
+    }
+    #right-contact #temp {
+        width: auto;
+        height: 50vh;
+        background-color: #333;
+        margin: 5vh auto 0px;
+    }
+    .contact input {
+    height: 25px;
+}
 }
 
 @media screen and (max-width: 480px) {
