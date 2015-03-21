@@ -108,6 +108,7 @@ li a img {
 li a h2 {
     font-family: "Gothic";
     transition: color .3s;
+    font-weight: normal;
 }
 
 li ul {
@@ -471,7 +472,7 @@ a {
     font-size: 1.5vw;
     font-weight: bold;
     margin-bottom: .7vw;
-    display: inline-block;
+    display: block;
 }
 
 .galeria {
@@ -579,14 +580,14 @@ a {
     float: left;
     position: absloute;
     margin-top: -5%;
+      padding-right: 3vw;
+  padding-bottom: 3vw;
 }
 
 #cennik > .left-img img {
     float: left;
     width: auto;
     height: 50vh;
-    padding-right: 20%;
-    padding-bottom: 10%;
 }
 
 #cennik > p {
