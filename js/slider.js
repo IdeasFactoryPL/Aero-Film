@@ -3,7 +3,7 @@ $(document).ready(function () {
     var carousel = $("#owl-demo");
   
    carousel.owlCarousel({
-    autoPlay: 3000,
+    autoPlay: 6000,
      navigation:true,
      navigationText: [
       "<img src='img/slider_prev.png'>",
