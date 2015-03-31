@@ -3,6 +3,7 @@
 	left: 0;
 	width: 100%;
 	z-index: 8050;
+	display: none;
 }
 
 #fancybox-buttons.top {
