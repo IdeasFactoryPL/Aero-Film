@@ -246,7 +246,7 @@ zmiana powyzsze powinno byc input[type=checkbox]:checked ~ #menu{
 }
 
 #galeria {
-    padding: 0px 11px 11px 0px;
+    padding: 0px 5px 5px 0px;
     background-color: white;
     box-shadow: none;
 }
@@ -494,8 +494,8 @@ a {
 }
 
 .video {
-    margin-left: 11px;
-    margin-top: 11px;
+    margin-left: 5px;
+    margin-top: 5px;
     height: 20vw;
 }
 
