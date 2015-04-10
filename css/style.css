@@ -686,8 +686,8 @@ a {
     width: 45%;
 }
 
-#right-contact #temp {
-    width: auto;
+#right-contact iframe {
+    width: 100%;
     height: 70vh;
     background-color: #333333;
     margin: 0 auto;
@@ -938,8 +938,8 @@ a {
     .contact input {
         height: 18px;
     }
-    #right-contact #temp {
-        width: auto;
+    #right-contact iframe {
+        width: 100%;
         height: 50vh;
         background-color: #333;
         margin: 5vh auto 0px;
