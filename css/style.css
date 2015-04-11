@@ -230,7 +230,7 @@ zmiana powyzsze powinno byc input[type=checkbox]:checked ~ #menu{
 }
 
 #o_nas {
-    padding: 5% 10%;
+    padding: 5% 15%;
     background-color: #e2e2e2;
 }
 
@@ -252,10 +252,12 @@ zmiana powyzsze powinno byc input[type=checkbox]:checked ~ #menu{
 }
 
 #cennik {
+    padding: 5% 15%;
     background-color: white;
 }
 
 #kontakt {
+    padding: 5% 15%;
     background-color: #e2e2e2;
 }
 
@@ -397,6 +399,7 @@ a {
 }
 
 #oferta > p {
+    padding: 0 10%;
     margin-bottom: 3vh;
     margin-top: 3vh;
     text-shadow: 0px 0px 5px white, 0px 0px 2px white, 0px 0px 10px white;
@@ -435,6 +438,9 @@ a {
     margin-top: 20px;
 }
 
+#oferta > .under_table p {
+    padding: 0 10%;
+}
 #oferta > .table > .table_yellow_element {
     float: left;
     width: 14.75vw;
@@ -691,7 +697,7 @@ a {
     height: 70vh;
     /*background-color: #333333;*/
     margin: 0 auto;
-    margin-top: 5vh;
+    margin-top: 2vh;
 }
 
 #face-slider {
