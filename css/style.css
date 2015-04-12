@@ -17,7 +17,7 @@ body {
 }
 
 p {
-    font-size: 3vh;
+    font-size: 2.7vh;
 }
 
 .social {
@@ -230,7 +230,7 @@ zmiana powyzsze powinno byc input[type=checkbox]:checked ~ #menu{
 }
 
 #o_nas {
-    padding: 5% 15%;
+    padding: 5% 10%;
     background-color: #e2e2e2;
 }
 
@@ -252,7 +252,7 @@ zmiana powyzsze powinno byc input[type=checkbox]:checked ~ #menu{
 }
 
 #cennik {
-    padding: 5% 15%;
+    /*padding: 5% 15%;*/
     background-color: white;
 }
 
@@ -331,7 +331,10 @@ a {
     text-transform: uppercase;
     margin-bottom: 3vh;
 }
-
+#o_nas >.container{
+    padding: 0 5%;
+    width: 90%;
+}
 #o_nas >.o_nas_napis {
     border-bottom: solid 2px white;
 }
@@ -349,21 +352,20 @@ a {
     padding: 2%;
 }
 
-#o_nas > p {
+#o_nas > .container > p {
     /*font-size: 3vh;*/
-    
     margin-bottom: 3vh;
     margin-top: 3vh;
 }
 
-#o_nas > .napis-technologia {
+#o_nas > .container > .napis-technologia {
     font-family: "Gothic-Bold";
     display: inline;
     border-bottom: 2px solid white;
     margin-bottom: 3vh;
 }
 
-#o_nas > p > span {
+#o_nas > .container > p > span {
     color: #f8bc4a;
 }
 
@@ -504,7 +506,10 @@ a {
     margin-top: 5px;
     height: 20vw;
 }
-
+.videomin{
+    margin-left: 5px;
+    margin-top: 5px;
+}
 .thevideo {
     width: 100%;
     height: 100%;
@@ -624,6 +629,7 @@ a {
 }
 
 #cennik > p {
+    width: 90%;
     margin-bottom: 3vh;
     margin-top: 3vh;
 }
