@@ -257,7 +257,7 @@ zmiana powyzsze powinno byc input[type=checkbox]:checked ~ #menu{
 }
 
 #kontakt {
-    padding: 5% 15%;
+    padding: 5% 10%;
     background-color: #e2e2e2;
 }
 
@@ -343,6 +343,7 @@ a {
     float: right;
     position: absloute;
     margin-top: -5%;
+    margin-right: -5%;
 }
 
 #o_nas > .top-right-img img {
@@ -618,8 +619,9 @@ a {
     float: left;
     position: absloute;
     margin-top: -5%;
-    padding-right: 3vw;
-    padding-bottom: 3vw;
+padding-right: 6vw;
+padding-bottom: 3vw;
+margin-left: -3%;
 }
 
 #cennik > .left-img img {
