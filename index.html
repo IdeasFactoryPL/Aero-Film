@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="shortcut icon" href="favicon.ico">
     <script src='js/jquery.js'></script>
+    
     <script src="js/animatescroll.js"></script>
     <script src="js/movie_hover.js"></script>
     <script src='js/owl.carousel.min.js'></script>
@@ -277,17 +278,11 @@
 </head>
 
 <body>
-    <div class="social">
-        <a href="http://facebook.com/AeroFilmPolska"><img src="img/bok_1.jpg" alt="facebook"></a>
-        <a href="http://youtube.com/channel/UCyTzQn7HmpJ6bc8gKg7I2gg"><img src="img/bok_2.jpg" alt="youtube"></a>
-        <a href="https://instagram.com/aero_film/"><img src="img/bok_3.jpg" alt="instagram"></a>
-    </div>
     <div id="top">
-        <div class="logo"><img id="logo" src="img/logo.png">
-        </div>
+        <div class="logo"><img id="logo" src="img/logo.png" alt="logo"></div>
         <div class="nav">
             <label for="show-menu" class="show-menu">Menu</label>
-            <input type="checkbox" id="show-menu" role="button">
+            <input type="checkbox" id="show-menu">
             <div id="nav-anchor"></div>
             <!-- <nav> -->
             <ul id="menu">
@@ -325,9 +320,8 @@
             <!-- </nav> -->
         </div>
     </div>
-    </div>
     <section id="start" class="contentpg">
-        <img src="img/logo_home.png" alt="logo" id="logo-glowna">
+        <img src="img/logo_home.png" id="logo-glowna" alt="logo-glowna">
         <div class="slider_back">
             <div class="slider">
                 <div id="owl-demo" class="owl-carousel">
@@ -378,14 +372,12 @@
             <h1>Film i Fotografia z powierza</h1>
             <p>Zastanawialiście się państwo jak wygląda <span>świat</span> z góry?</p>
             <p>Wystarczy wznieść się parę metrów wyżej a miejsca, które znamy możemy zobaczyć z innej, <span>ciekawszej</span> perspektywy</p>
-            <a onclick="$('#o_nas').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker"></a>
-            </a>
-            </a>
+            <a onclick="$('#o_nas').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker" alt="start_arrow"></a>
         </div>
     </section>
     <section id="o_nas" class="contentpg">
         <div class="top-right-img">
-            <img src="img/o_nas_pic.png">
+            <img src="img/o_nas_pic.png" alt="o_nas_pic">
         </div>
         <div class="o_nas_napis">
             O nas
@@ -404,8 +396,7 @@
                 Do filmowania i robienia zdjęć wykorzystujemy wysokiej jakości multikoptera(drona). Jest on w stanie osiągnąć prędkość nawet do 18m/s, wzbić się na wysokość kilkuset metrów -jego zasięg to ok. 1km od miejsca w którym stoi operator. Dzięki trzyosiowemu systemowi stabilizującemu obraz jest płynny i odporny na drgania. Standardowo nagrywamy w rozdzielczości <span>(Full HD)</span> 1920x1080p/60 fps lecz na specjalne życzenie możemy nagrać film w wyższej rozdzielczości 2,7K oraz <span>4K</span>. Dzięki systemowi FPV, jesteśmy w stanie odtwarzać obraz na żywo podczas lotu drona. Operator multikoptera w czasie rzeczywistym ma dostęp do podglądu obrazu przekazywanego z kamery, dzięki temu klient może na bieżąco wybierać jak najlepsze jego zdaniem ujęcia
             </p>
         </div>
-        <a onclick="$('#oferta').animatescroll();" class="next_button_lighter"><img src="img/arrow.png" class="next_button_lighter"></a>
-        </a>
+        <a onclick="$('#oferta').animatescroll();" class="next_button_lighter"><img src="img/arrow.png" class="next_button_lighter" alt="o_nas_arrow"></a>
     </section>
     <section id="oferta" class="contentpg">
         <!--         <div class="top-right-img">
@@ -478,7 +469,7 @@
             </div>
         </div>
         <div class="bottom-left-img">
-            <img src="img/oferta_pic2.png">
+            <img src="img/oferta_pic2.png" alt="oferta_pic2">
         </div>
         <div class="under_table">
             <p>
@@ -488,8 +479,7 @@
                 <br>Jesteśmy płatnikiem vat i wystawiamy faktury.
                 <br>
             </p>
-            <a onclick="$('#galeria').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker"></a>
-            </a>
+            <a onclick="$('#galeria').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker" alt="oferta_arrow"></a>
         </div>
     </section>
     <section id="galeria" class="contentpg">
@@ -635,7 +625,7 @@
             Cennik
         </div>
         <div class="left-img">
-            <img src="img/cennik_pic.png">
+            <img src="img/cennik_pic.png" alt="cennik_pic">
         </div>
         <p>
             każde zlecenie rozpatrujemy indywidualnie.
@@ -650,13 +640,18 @@
         <p class="cennik_end">
             wszystkie ceny są cenami netto
         </p>
-        <a onclick="$('#kontakt').animatescroll();" class="next_button_cennik"><img src="img/arrow.png" class="next_button_cennik"></a>
+        <a onclick="$('#kontakt').animatescroll();" class="next_button_cennik"><img src="img/arrow.png" class="next_button_cennik" alt="cennik_arrow"></a>
     </section>
     <section id="kontakt" class="contentpg">
         <div class="kontakt_napis">
             Kontakt
         </div>
         <div id="left-contact">
+                        <div class="social">
+        <a href="http://facebook.com/AeroFilmPolska"><img src="img/bok_1.jpg" alt="facebook"></a>
+        <a href="http://youtube.com/channel/UCyTzQn7HmpJ6bc8gKg7I2gg"><img src="img/bok_2.jpg" alt="youtube"></a>
+        <a href="https://instagram.com/aero_film/"><img src="img/bok_3.jpg" alt="instagram"></a>
+    </div>
             <div class="contact">
                 <p>AERO - FILM</p>
                 <p>ŁOMIANKI (K. WARSZAWY)</p>
@@ -667,7 +662,7 @@
                 <p><b>KONTAKT@AERO-FILM.PL</b></p>
             </div>
             <div class="contact">
-                <form id="mycontactform" action="" method="post">
+                <form id="mycontactform" action="#" method="post">
                     <div id="success" style="color: black;"></div>
                     <input id="name" type="text" name="name" placeholder="IMIĘ">
                     <br>
@@ -681,7 +676,7 @@
  <!--            <div id="temp"> -->
 
 
-<iframe src="http://mapbuildr.com/frame/6mjq0z" frameborder="0"></iframe>
+<iframe src="http://mapbuildr.com/frame/6mjq0z"></iframe>
             <!-- </div> -->
         </div>
     </section>
@@ -700,6 +695,6 @@
         });
         </script>
         -->
-    <a href="http://ideasfactory.pl" target="_blank" id="ideasfactory">© IdeasFactory.pl</p>
+    <a href="http://ideasfactory.pl" target="_blank" id="ideasfactory">© IdeasFactory.pl</a>
     </body>
 </html>

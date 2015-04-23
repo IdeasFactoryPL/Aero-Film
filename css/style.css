@@ -706,6 +706,7 @@ margin-left: -3%;
     /*background-color: #333333;*/
     margin: 0 auto;
     margin-top: 2vh;
+    border: 0;
 }
 
 #face-slider {
@@ -783,6 +784,24 @@ margin-left: -3%;
     .video {
         height: auto;
     }
+    .social {
+    margin-top: 5%;
+    top: calc(50% - 120px);
+    z-index: 9;
+    position: relative;
+    text-align: center;
+}
+
+.social a{
+    margin-bottom: 5%;
+    position: relative;
+    display: inline-block;
+}
+
+.social img {
+    display: block;
+    margin-bottom: 5px;
+}
 }
 
 @media screen and (max-width: 850px) {
