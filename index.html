@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/owl.carousel.css">
     <link rel="shortcut icon" href="favicon.ico">
     <script src='js/jquery.js'></script>
+    <script src="/path/to/parallax.js"></script>
     <script src="js/animatescroll.js"></script>
     <script src="js/movie_hover.js"></script>
     <script src='js/owl.carousel.min.js'></script>
@@ -25,6 +26,71 @@
     <link rel="stylesheet" type="text/css" href="source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
     <script type="text/javascript" src="source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
     <script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+    <script>
+    var main = function() {
+        /* Push the body and the nav over by 285px over */
+        $('.icon-menu').click(function() {
+            $('.menu').animate({
+                left: "0px"
+            }, 200);
+            $('body').animate({
+                left: "285px"
+            }, 200);
+            $.fn.animatescroll.defaults = {
+                easing: "swing",
+                scrollSpeed: 800,
+                padding: 0,
+                element: "html,body"
+            };
+        });
+        /* Then push them back */
+        $('.icon-close').click(function() {
+            $('.menu').animate({
+                left: "-285px"
+            }, 200);
+            $('body').animate({
+                left: "0px"
+            }, 200);
+        });
+        $('li').click(function() {
+            $('.menu').animate({
+                left: "-285px"
+            }, 200);
+            $('body').animate({
+                left: "0px"
+            }, 200);
+            $.fn.animatescroll.defaults = {
+                easing: "swing",
+                scrollSpeed: 800,
+                padding: 0,
+                element: "html,body"
+            };
+        });
+    };
+    $(document).ready(main);
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        //Check to see if the window is top if not then display button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $('.scrollToTop').fadeIn(250);
+            } else {
+                $('.scrollToTop').fadeOut(300);
+            }
+        });
+
+        //Click event to scroll to top
+        $('.scrollToTop').click(function() {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+
+    });
+    </script>
     <script>
     $(document).ready(function() {
         /**
@@ -90,13 +156,10 @@
         /*
          *  Simple image gallery. Uses default settings
          */
-
         $('.fancybox').fancybox();
-
         /*
          *  Different effects
          */
-
         // Change title type, overlay closing speed
         $(".fancybox-effects-a").fancybox({
             helpers: {
@@ -108,26 +171,21 @@
                 }
             }
         });
-
         // Disable opening and closing animations, change title type
         $(".fancybox-effects-b").fancybox({
             openEffect: 'none',
             closeEffect: 'none',
-
             helpers: {
                 title: {
                     type: 'over'
                 }
             }
         });
-
         // Set custom style, close if clicked, change title type and overlay color
         $(".fancybox-effects-c").fancybox({
             wrapCSS: 'fancybox-custom',
             closeClick: true,
-
             openEffect: 'none',
-
             helpers: {
                 title: {
                     type: 'inside'
@@ -139,62 +197,46 @@
                 }
             }
         });
-
         // Remove padding, set opening and closing animations, close if clicked and disable overlay
         $(".fancybox-effects-d").fancybox({
             padding: 0,
-
             openEffect: 'elastic',
             openSpeed: 150,
-
             closeEffect: 'elastic',
             closeSpeed: 150,
-
             closeClick: true,
-
             helpers: {
                 overlay: null
             }
         });
-
         /*
          *  Button helper. Disable animations, hide close button, change title type and content
          */
-
         $('.fancybox-buttons').fancybox({
             openEffect: 'none',
             closeEffect: 'none',
-
             prevEffect: 'none',
             nextEffect: 'none',
-
             closeBtn: false,
-
             helpers: {
                 title: {
                     type: 'inside'
                 },
                 buttons: {}
             },
-
             afterLoad: function() {
                 this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
             }
         });
-
-
         /*
          *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
          */
-
         $('.fancybox-thumbs').fancybox({
             prevEffect: 'none',
             nextEffect: 'none',
-
             closeBtn: false,
             arrows: false,
             nextClick: true,
-
             helpers: {
                 thumbs: {
                     width: 50,
@@ -202,7 +244,6 @@
                 }
             }
         });
-
         /*
          *  Media helper. Group items, disable animations, hide arrows, enable media and button helpers.
          */
@@ -213,22 +254,18 @@
                 closeEffect: 'none',
                 prevEffect: 'none',
                 nextEffect: 'none',
-
                 arrows: false,
                 helpers: {
                     media: {},
                     buttons: {}
                 }
             });
-
         /*
          *  Open manually
          */
-
         $("#fancybox-manual-a").click(function() {
             $.fancybox.open('1_b.jpg');
         });
-
         $("#fancybox-manual-b").click(function() {
             $.fancybox.open({
                 href: 'iframe.html',
@@ -236,7 +273,6 @@
                 padding: 5
             });
         });
-
         $("#fancybox-manual-c").click(function() {
             $.fancybox.open([{
                 href: '1_b.jpg',
@@ -255,39 +291,73 @@
                 }
             });
         });
-
-
     });
     </script>
     <script>
     $(document).ready(function() {
-
         $('#submit').click(function() {
-
             $.post("send.php", $("#mycontactform").serialize(), function(response) {
                 $('#success').html(response);
                 //$('#success').hide('slow');
             });
             return false;
-
         });
-
     });
     </script>
 </head>
 
 <body>
-    <div class="social">
-        <a href="http://facebook.com/AeroFilmPolska"><img src="img/bok_1.jpg" alt="facebook"></a>
-        <a href="http://youtube.com/channel/UCyTzQn7HmpJ6bc8gKg7I2gg"><img src="img/bok_2.jpg" alt="youtube"></a>
-        <a href="https://instagram.com/aero_film/"><img src="img/bok_3.jpg" alt="instagram"></a>
+    <a href="#" class="scrollToTop"></a>
+    <div class="menu">
+        <!-- Menu icon -->
+        <div class="icon-close">
+            <img src="img/close_menu.png">
+        </div>
+        <!-- Menu -->
+        <ul>
+            <li>
+                <a href="#start" id="ikona1" onclick="$('body').animatescroll();">
+                        Start
+                        </a>
+            </li>
+            <li>
+                <a href="#o_nas" id="ikona2" onclick="$('#o_nas').animatescroll();">
+                        O Nas
+                        </a>
+            </li>
+            <li>
+                <a href="#oferta" id="ikona3" onclick="$('#oferta').animatescroll();">
+                        Oferta
+                        </a>
+            </li>
+            <li>
+                <a href="#galeria" id="ikona4" onclick="$('#galeria').animatescroll();">
+                        Galeria
+                        </a>
+            </li>
+            <li>
+                <a href="#cennik" id="ikona5" onclick="$('#cennik').animatescroll();">
+                        Cennik
+                        </a>
+            </li>
+            <li>
+                <a href="#kontakt" id="ikona6" onclick="$('#kontakt').animatescroll();">
+                        Kontakt
+                        </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Main body -->
+    <div class="jumbotron">
+        <div class="icon-menu">
+            <i class="fa fa-bars"></i> Menu
+        </div>
     </div>
     <div id="top">
-        <div class="logo"><img id="logo" src="img/logo.png">
-        </div>
+        <div class="logo"><img id="logo" src="img/logo.png" alt="logo"></div>
         <div class="nav">
             <label for="show-menu" class="show-menu">Menu</label>
-            <input type="checkbox" id="show-menu" role="button">
+            <input type="checkbox" id="show-menu">
             <div id="nav-anchor"></div>
             <!-- <nav> -->
             <ul id="menu">
@@ -325,9 +395,8 @@
             <!-- </nav> -->
         </div>
     </div>
-    </div>
     <section id="start" class="contentpg">
-        <img src="img/logo_home.png" alt="logo" id="logo-glowna">
+        <img src="img/logo_home.png" id="logo-glowna" alt="logo-glowna">
         <div class="slider_back">
             <div class="slider">
                 <div id="owl-demo" class="owl-carousel">
@@ -378,21 +447,19 @@
             <h1>Film i Fotografia z powierza</h1>
             <p>Zastanawialiście się państwo jak wygląda <span>świat</span> z góry?</p>
             <p>Wystarczy wznieść się parę metrów wyżej a miejsca, które znamy możemy zobaczyć z innej, <span>ciekawszej</span> perspektywy</p>
-            <a onclick="$('#o_nas').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker"></a>
-            </a>
-            </a>
+            <a onclick="$('#o_nas').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker" alt="start_arrow"></a>
         </div>
     </section>
     <section id="o_nas" class="contentpg">
         <div class="top-right-img">
-            <img src="img/o_nas_pic.png">
+            <img src="img/o_nas_pic.png" alt="o_nas_pic">
         </div>
         <div class="o_nas_napis">
             O nas
         </div>
         <div class="container">
             <p>
-                Nasza firma oferuje usługi filmowe oraz fotograficzne z powietrza. Do tej pory fotografia lotnicza była kosztowną i ciężko dostępną usługą ze względu na sprzęt, który mógł ją wykonywać. W ostatnich latach Dzięki rozwojowi technologicznemu powstały bezzałogowe statki powietrzne, potocznie zwane dronami Umożliwiają one uzyskanie niepowtarzalnych ujęć w miejscach, gdzie klasyczne obiekty latające takie jak samoloty i śmigłowce nie mogą lub nie są w stanie dotrzeć.
+                Nasza firma oferuje usługi filmowe oraz fotograficzne z powietrza. Do tej pory fotografia lotnicza była kosztowną i ciężko dostępną usługą ze względu na sprzęt, który mógł ją wykonywać. W ostatnich latach Dzięki rozwojowi technologicznemu powstały bezzałogowe statki powietrzne, potocznie zwane dronami. Umożliwiają one uzyskanie niepowtarzalnych ujęć w miejscach, gdzie klasyczne obiekty latające, takie jak samoloty i śmigłowce nie mogą lub nie są w stanie dotrzeć.
             </p>
             <p>
                 Posiadamy licencje na sterowanie bezzałogowym statkiem powietrznym UAV wydaną przez Urząd Lotnictwa Cywilnego, co gwarantuje bezpieczeństwo naszych usług.
@@ -404,19 +471,18 @@
                 Do filmowania i robienia zdjęć wykorzystujemy wysokiej jakości multikoptera(drona). Jest on w stanie osiągnąć prędkość nawet do 18m/s, wzbić się na wysokość kilkuset metrów -jego zasięg to ok. 1km od miejsca w którym stoi operator. Dzięki trzyosiowemu systemowi stabilizującemu obraz jest płynny i odporny na drgania. Standardowo nagrywamy w rozdzielczości <span>(Full HD)</span> 1920x1080p/60 fps lecz na specjalne życzenie możemy nagrać film w wyższej rozdzielczości 2,7K oraz <span>4K</span>. Dzięki systemowi FPV, jesteśmy w stanie odtwarzać obraz na żywo podczas lotu drona. Operator multikoptera w czasie rzeczywistym ma dostęp do podglądu obrazu przekazywanego z kamery, dzięki temu klient może na bieżąco wybierać jak najlepsze jego zdaniem ujęcia
             </p>
         </div>
-        <a onclick="$('#oferta').animatescroll();" class="next_button_lighter"><img src="img/arrow.png" class="next_button_lighter"></a>
-        </a>
+        <a onclick="$('#oferta').animatescroll();" class="next_button_lighter"><img src="img/arrow.png" class="next_button_lighter" alt="o_nas_arrow"></a>
     </section>
     <section id="oferta" class="contentpg">
         <!--         <div class="top-right-img">
-            <img src="img/oferta_pic1.png">
-        </div> -->
+                            <img src="img/oferta_pic1.png">
+            </div> -->
         <div class="oferta_napis">
             Oferta
         </div>
         <p>
-            Jesteśmy w stanie filmować prawie wszystko bez ograniczeń
-            <br> Dzięki niewielkim rozmiarom drona możliwe są ujęcia w centrach miast, między budynkami a nawet w ich wnętrzu
+            Jesteśmy w stanie filmować prawie wszystko bez ograniczeń.
+            <br>Dzięki niewielkim rozmiarom drona możliwe są ujęcia w centrach miast, między budynkami a nawet w ich wnętrzu.
         </p>
         <p>
             Nasze usługi skierowane są praktycznie do każdego. Najczęściej filmowane i fotografowane są:
@@ -478,34 +544,33 @@
             </div>
         </div>
         <div class="bottom-left-img">
-            <img src="img/oferta_pic2.png">
+            <img src="img/oferta_pic2.png" alt="oferta_pic2">
         </div>
         <div class="under_table">
             <p>
-                Jesteśmy w stanie współpracować z mediami (portale informacyjne, telewizja, prasa)
-                <br> Mamy możliwość szybkiego dotarcia na miejsce zdarzenia oraz wysłania materiału bezpośrednio z miejsca wydarzenia
-                <br> Posiadamy polisę oc chroniącą naszych klientów
-                <br> Jesteśmy płatnikiem vat i wystawiamy faktury
+                Jesteśmy w stanie współpracować z mediami (portale informacyjne, telewizja, prasa).
+                <br>Mamy możliwość szybkiego dotarcia na miejsce zdarzenia oraz wysłania materiału bezpośrednio z miejsca wydarzenia.
+                <br>Posiadamy polisę oc chroniącą naszych klientów.
+                <br>Jesteśmy płatnikiem vat i wystawiamy faktury.
                 <br>
             </p>
-            <a onclick="$('#galeria').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker"></a>
-            </a>
+            <a onclick="$('#galeria').animatescroll();" class="next_button_darker"><img src="img/arrow.png" class="next_button_darker" alt="oferta_arrow"></a>
         </div>
     </section>
     <section id="galeria" class="contentpg">
         <!-- <div class="galeria"> -->
         <!--             <div class="dwa_na_dwa">
-                <a class="fancybox-media" href="http://www.youtube.com/watch?v=HUrEN5Ec9xI">
-                    <div class="video">
-                        <video class="thevideo" loop>
-                            <source src="img/galeria/1.mp4" type="video/mp4">
-                            Twoja przeglądarka nie wspiera wideo
-                        </video>
-                    </div>
-                </a>
+                                <a class="fancybox-media" href="http://www.youtube.com/watch?v=HUrEN5Ec9xI">
+                                    <div class="video">
+                                            <video class="thevideo" loop>
+                                                    <source src="img/galeria/1.mp4" type="video/mp4">
+                                                    Twoja przeglądarka nie wspiera wideo
+                                            </video>
+                                    </div>
+                                </a>
             </div> -->
         <div class="col-lg-6 col-md-6 col-xs-12 ">
-            <a class="thumbnail fancybox-media" href="http://www.youtube.com/watch?v=HUrEN5Ec9xI">
+            <a class="thumbnail fancybox-media" href="https://www.youtube.com/watch?v=nfhkkwla6sU">
                 <div class="video">
                     <video class="thevideo" loop>
                         <source src="img/galeria/filmiki/1.mp4" type="video/mp4">
@@ -537,9 +602,9 @@
         </div>
         <div style="float: right;" class="col-lg-6 col-md-6 col-xs-12 ">
             <a class="thumbnail">
-                <div class="video">
+                <div class="video fancybox-media" href="https://www.youtube.com/watch?v=3b722VoeP_Y">
                     <video class="thevideo" loop>
-                        <source src="img/galeria/filmiki/2.mp4" type="video/mp4">
+                        <source src="img/galeria/filmiki/5.mp4" type="video/mp4">
                             Twoja przeglądarka nie wspiera wideo
                     </video>
                 </div>
@@ -562,11 +627,11 @@
             </a>
         </div>
         <!--             <div style="float: right;" class="col-lg-3 col-md-3 col-xs-6 thumb">
-                <a class="thumbnail fancybox" data-fancybox-group="gallery" href="img/galeria/8.jpg">
-                    <img class="img-responsive" src="img/galeria/min/8.jpg" alt="">
-                </a>
-            </div>
- -->
+                                <a class="thumbnail fancybox" data-fancybox-group="gallery" href="img/galeria/8.jpg">
+                                    <img class="img-responsive" src="img/galeria/min/8.jpg" alt="">
+                                </a>
+                        </div>
+            -->
         <div class="col-lg-9 col-md-9 col-xs-12 ">
             <a class="thumbnail fancybox" data-fancybox-group="gallery" href="img/galeria/7.jpg">
                 <img class="img-responsive" src="img/galeria/min/7.jpg" alt="">
@@ -620,8 +685,14 @@
             </a>
         </div>
         <div class="col-lg-3 col-md-3 col-xs-6 thumb">
-            <a class="thumbnail fancybox" data-fancybox-group="gallery" href="img/galeria/1.jpg">
-                <img class="img-responsive" src="img/galeria/min/1.jpg" alt="">
+            <a class="thumbnail">
+                <div class="video">
+                    <video class="thevideo" loop>
+                        <source src="img/galeria/filmiki/2.mp4" type="video/mp4">
+                            Twoja przeglądarka nie wspiera wideo
+                    </video>
+                </div>
+                <!-- <img class="img-responsive" src="img/galeria/1.jpg" alt=""> -->
             </a>
         </div>
         <div class="col-lg-12 col-md-12 col-xs-12 thumb">
@@ -635,28 +706,33 @@
             Cennik
         </div>
         <div class="left-img">
-            <img src="img/cennik_pic.png">
+            <img src="img/cennik_pic.png" alt="cennik_pic">
         </div>
         <p>
-            każde zlecenie rozpatrujemy indywidualnie
-            <br> cena uzależniona jest od dostępności obiektu, warunków atmosferycznych, poziomu trudności zlecenia oraz długości filmu i ilości wykonanych zdjęć
+            każde zlecenie rozpatrujemy indywidualnie.
+            <br>cena uzależniona jest od dostępności obiektu, warunków atmosferycznych, poziomu trudności zlecenia oraz długości filmu i ilości wykonanych zdjęć.
         </p>
         <p>
             ceny za sesje fotograficzną zaczynają się od <span>300</span> zł
-            <br> istnieje możliwość obróbki zdjęć
-            <br> materiał filmowy bez obróbki - od <span>500</span> zł
-            <br> pełen film - montaż ujęć ,podkład muzyczny, obróbka wizualna - od <span>800</span> zł
+            <br>istnieje możliwość obróbki zdjęć
+            <br>materiał filmowy bez obróbki - od <span>500</span> zł
+            <br>pełen film - montaż ujęć ,podkład muzyczny, obróbka wizualna - od <span>800</span> zł.
         </p>
         <p class="cennik_end">
             wszystkie ceny są cenami netto
         </p>
-        <a onclick="$('#kontakt').animatescroll();" class="next_button_cennik"><img src="img/arrow.png" class="next_button_cennik"></a>
+        <a onclick="$('#kontakt').animatescroll();" class="next_button_cennik"><img src="img/arrow.png" class="next_button_cennik" alt="cennik_arrow"></a>
     </section>
     <section id="kontakt" class="contentpg">
         <div class="kontakt_napis">
             Kontakt
         </div>
         <div id="left-contact">
+            <div class="social">
+                <a href="http://facebook.com/AeroFilmPolska"><img src="img/bok_1.jpg" alt="facebook"></a>
+                <a href="http://youtube.com/channel/UCyTzQn7HmpJ6bc8gKg7I2gg"><img src="img/bok_2.jpg" alt="youtube"></a>
+                <a href="https://instagram.com/aero_film/"><img src="img/bok_3.jpg" alt="instagram"></a>
+            </div>
             <div class="contact">
                 <p>AERO - FILM</p>
                 <p>ŁOMIANKI (K. WARSZAWY)</p>
@@ -667,7 +743,7 @@
                 <p><b>KONTAKT@AERO-FILM.PL</b></p>
             </div>
             <div class="contact">
-                <form id="mycontactform" action="" method="post">
+                <form id="mycontactform" action="#" method="post">
                     <div id="success" style="color: black;"></div>
                     <input id="name" type="text" name="name" placeholder="IMIĘ">
                     <br>
@@ -678,28 +754,27 @@
             </div>
         </div>
         <div id="right-contact">
- <!--            <div id="temp"> -->
-
-
-<iframe src="http://mapbuildr.com/frame/6mjq0z" frameborder="0"></iframe>
+            <!--            <div id="temp"> -->
+            <iframe src="http://mapbuildr.com/frame/6mjq0z"></iframe>
             <!-- </div> -->
         </div>
     </section>
     <!--
-        Slider do facebooka, przyda się później
-        <div id="face-slider">
-                <div id="tab"></div>
-                <div id="face-code"><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FMadamePiaseczno&amp;width&amp;height=280&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=true&amp;show_border=false&amp;appId=489774647751790" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:280px;" allowTransparency="true"></iframe></div>
-        </div>
+                Slider do facebooka, przyda się później
+                <div id="face-slider">
+                            <div id="tab"></div>
+                            <div id="face-code"><iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2FMadamePiaseczno&amp;width&amp;height=280&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=true&amp;show_border=false&amp;appId=489774647751790" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:280px;" allowTransparency="true"></iframe></div>
+                </div>
         <script>
-        $(function(){
-            $('#face-slider').hover(
-                function(){ $('#face-slider').stop().animate({"right": "0"}, 1000); } ,
-                function(){ $('#face-slider').stop().animate({"right": "-302px"}, 1000); }
-            );
-        });
+                $(function(){
+                    $('#face-slider').hover(
+                        function(){ $('#face-slider').stop().animate({"right": "0"}, 1000); } ,
+                        function(){ $('#face-slider').stop().animate({"right": "-302px"}, 1000); }
+                    );
+                });
         </script>
         -->
-    <a href="http://ideasfactory.pl" target="_blank" id="ideasfactory">© IdeasFactory.pl</p>
-    </body>
+    <a href="http://ideasfactory.pl" target="_blank" id="ideasfactory">© IdeasFactory.pl</a>
+</body>
+
 </html>
