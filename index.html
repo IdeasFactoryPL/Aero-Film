@@ -35,6 +35,12 @@
                     $('body').animate({
                     left: "285px"
                     }, 200);
+                                        $.fn.animatescroll.defaults = {        
+        easing:"swing",
+        scrollSpeed:800,
+        padding:0,
+        element:"html,body"
+    };
                 });
                 /* Then push them back */
                 $('.icon-close').click(function() {
@@ -52,12 +58,12 @@
                     $('body').animate({
                     left: "0px"
                     }, 200);
-                    $.fn.animatescroll.defaults = {        
-        easing:"swing",
-        scrollSpeed:800,
-        padding:0,
-        element:"html,body"
-    };
+    //                 $.fn.animatescroll.defaults = {        
+    //     easing:"swing",
+    //     scrollSpeed:800,
+    //     padding:0,
+    //     element:"html,body"
+    // };
                 });
                 };
                 $(document).ready(main);
