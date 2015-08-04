@@ -2,13 +2,13 @@
 @font-face {
     font-family: "Gothic";
     src: url(../font/gothic.eot);
-    src: url(../font/gothic.eot?#iefix) format("embedded-opentype"), url(../font/gothic.woff) format("woff"), url(../font/gothic.ttf) format("truetype"), url(../font/gothic.svg#svgFontName) format("svg");
+    src: url(../font/gothic.eot?#iefix) format("embedded-opentype"), url(../font/gothic.woff) format("woff"), url(../font/gothic.ttf) format("truetype"), url(../font/gothic.svg) format("svg");
 }
 
 @font-face {
     font-family: "Gothic-Bold";
     src: url(../font/gothic-bold.eot);
-    src: url(../font/gothic-bold.eot?#iefix) format("embedded-opentype"), url(../font/gothic-bold.woff) format("woff"), url(../font/gothic-bold.ttf) format("truetype"), url(../font/gothic-bold.svg#svgFontName) format("svg");
+    src: url(../font/gothic-bold.eot?#iefix) format("embedded-opentype"), url(../font/gothic-bold.woff) format("woff"), url(../font/gothic-bold.ttf) format("truetype"), url(../font/gothic-bold.svg) format("svg");
 }
 
 /* Initial body */
