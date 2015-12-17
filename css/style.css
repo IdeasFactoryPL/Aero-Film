@@ -526,7 +526,7 @@ a {
 .video {
     margin-left: 5px;
     margin-top: 5px;
-    height: 20vw;
+    /*height: 20vw;*/
 }
 .videomin{
     margin-left: 5px;
@@ -970,6 +970,9 @@ a {
         padding-bottom: 0px;
         margin-top: 0;
     }
+    .zaufali_nam_napis{
+        width: 95%;
+    }
 }
 
 @media screen and (max-width: 850px) {
@@ -1017,10 +1020,14 @@ a {
     .o_nas_napis,
     .oferta_napis,
     .cennik_napis,
+    .zaufali_nam_napis,
     .kontakt_napis {
         width: 60%;
         font-size: 22px;
         height: auto;
+    }
+    .zaufali_nam_napis{
+        margin-bottom: 0px;
     }
     #start {
         padding: 60px 0% 0%;
@@ -1130,6 +1137,7 @@ a {
     .o_nas_napis,
     .oferta_napis,
     .cennik_napis,
+    .zaufali_nam_napis,
     .kontakt_napis {
         width: 70%;
     }
