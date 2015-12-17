@@ -96,7 +96,11 @@ a.nav-active {
 li {
     display: inline-block;
     margin-right: 1px;
-    width: 12%;
+}
+
+#menu > li {
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
 li a {
@@ -306,7 +310,8 @@ a {
 .o_nas_napis,
 .oferta_napis,
 .cennik_napis,
-.kontakt_napis {
+.kontakt_napis,
+.zaufali_nam_napis {
     opacity: .8;
     margin: auto;
     text-align: center;
@@ -635,9 +640,9 @@ a {
     float: left;
     position: absloute;
     margin-top: -5%;
-padding-right: 6vw;
-padding-bottom: 3vw;
-margin-left: -3%;
+    padding-right: 6vw;
+    padding-bottom: 3vw;
+    margin-left: -3%;
 }
 
 #cennik > .left-img img {
@@ -725,6 +730,40 @@ margin-left: -3%;
     border: 0;
 }
 
+.zaufali_nam{
+    margin: 0 auto;
+    font-size: 3vh;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+}
+
+#zaufali_nam {
+    padding: 5% 10%;
+    background-color: #e2e2e2;
+    text-align: center;
+}
+
+.zaufali_nam_napis {
+    margin-bottom: 80px;
+}
+
+#zaufali_nam figure {
+    display: inline-block;
+    margin: 20px;
+    width: 200px;
+}
+.loga > figure > a:link, .loga > figure > a:visited, .loga > figure > a:hover, .loga > figure > a:active{
+    color: #333;
+}
+
+.loga > figure > a{
+    transition: all 0.2s ease;
+}
+
+.loga > figure > a:hover{
+    opacity: 0.8;
+}
+
 #face-slider {
     position: fixed;
     right: -302px;
@@ -797,107 +836,140 @@ margin-left: -3%;
 }
 
 @media screen and (max-width: 991px) {
+    #start{
+        padding-top: 40px;
+    }
     .video {
         height: auto;
     }
     .social {
-    margin-top: 5%;
-    top: calc(50% - 120px);
-    z-index: 9;
-    position: relative;
-    text-align: center;
+        margin-top: 5%;
+        top: calc(50% - 120px);
+        z-index: 9;
+        position: relative;
+        text-align: center;
+    }
 
-}
+    .social a{
+        margin-bottom: 5%;
+        position: relative;
+        display: inline-block;
+    }
 
-.social a{
-    margin-bottom: 5%;
-    position: relative;
-    display: inline-block;
-}
+    .social img {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .jumbotron{
+        display: block;
+    }
 
-.social img {
-    display: block;
-    margin-bottom: 5px;
-}
-.jumbotron{
-    display: block;
-}
+    .menu{
+        display: block;
+    }
+    /* Initial menu */
+    .menu {
+      background-color: #202024;
+      left: -285px;  /* start off behind the scenes */
+      height: 100%;
+      position: fixed;
+      width: 285px;
+      z-index: 10;
+    }
 
-.menu{
-    display: block;
-}
-/* Initial menu */
-.menu {
-  background-color: #202024;
-  left: -285px;  /* start off behind the scenes */
-  height: 100%;
-  position: fixed;
-  width: 285px;
-  z-index: 10;
-}
+    /* Basic styling */
 
-/* Basic styling */
+    .jumbotron {
+      background-color: #f8bc4a; 
+      height: 100%;
+      -webkit-background-size: cover;
+         -moz-background-size: cover;
+           -o-background-size: cover;
+              background-size: cover;
+      margin-bottom: 0;
+      padding: 0;
+    }
 
-.jumbotron {
-  background-color: #f8bc4a; 
-  height: 100%;
-  -webkit-background-size: cover;
-     -moz-background-size: cover;
-       -o-background-size: cover;
-          background-size: cover;
-  margin-bottom: 0;
-  padding: 0;
-}
+    .menu ul {
+      border-top: 1px solid #636366;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: block;
+    }
 
-.menu ul {
-  border-top: 1px solid #636366;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
+    .menu li {
+      border-bottom: 1px solid #636366;
+      font-family: 'Open Sans', sans-serif;
+      line-height: 45px;
+      padding-bottom: 3px;
+      /*padding-left: 20px;*/
+      padding-top: 3px;
+    }
 
-.menu li {
-  border-bottom: 1px solid #636366;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 45px;
-  padding-bottom: 3px;
-  /*padding-left: 20px;*/
-  padding-top: 3px;
-}
+    .menu a {
+      color: #fff;
+      font-size: 15px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
 
-.menu a {
-  color: #fff;
-  font-size: 15px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
+    .icon-close {
+        padding-bottom: 3px;
+      cursor: pointer;
+      padding-left: 10px;
+      padding-top: 10px;
+    }
 
-.icon-close {
-    padding-bottom: 3px;
-  cursor: pointer;
-  padding-left: 10px;
-  padding-top: 10px;
-}
+    .icon-menu {
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 16px;
+      padding-bottom: 25px;
+      padding-left: 25px;
+      padding-top: 25px;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
 
-.icon-menu {
-  color: #fff;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  padding-bottom: 25px;
-  padding-left: 25px;
-  padding-top: 25px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.icon-menu i {
-  margin-right: 5px;
-}
-.nav{
-    display: none;
-}
+    .icon-menu i {
+      margin-right: 5px;
+    }
+    .nav{
+        display: none;
+    }
+    #top {
+        height: 0px;
+        background-color: transparent;
+    }
+    .top {
+        height: 148px;
+        opacity: 1;
+        filter: alpha(opacity=100);
+        z-index: 9;
+    }
+    .logo {
+        margin-top: 43px;
+        width: 100%;
+        float: right;
+        margin-bottom: 5px;
+    }
+    .logo img {
+        display: none;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    ul li,
+    li a {
+        width: 100%;
+        z-index: 1;
+    }
+    li a {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        margin-top: 0;
+    }
 }
 
 @media screen and (max-width: 850px) {
@@ -914,11 +986,6 @@ margin-left: -3%;
         max-width: 100%;
         height: auto;
         z-index: 5;
-    }
-    ul li,
-    li a {
-        width: 100%;
-        z-index: 1;
     }
     .show-menu {
         display: block;
@@ -943,35 +1010,9 @@ margin-left: -3%;
         border-radius: 1px;
         background-color: white;
     }
-    li a {
-        padding-top: 0px;
-        padding-bottom: 0px;
-        margin-top: 0;
-    }
-    .top {
-        height: 148px;
-        opacity: 1;
-        filter: alpha(opacity=100);
-        z-index: 9;
-    }
-    .logo {
-        margin-top: 43px;
-        width: 100%;
-        float: right;
-        margin-bottom: 5px;
-    }
-    .logo img {
-        display: none;
-        margin-left: auto;
-        margin-right: auto;
-    }
     #logo-glowna {
         height: auto;
         width: 70%;
-    }
-    #top {
-        height: 0px;
-        background-color: transparent;
     }
     .o_nas_napis,
     .oferta_napis,

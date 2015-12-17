@@ -42,12 +42,17 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#cennik" id="ikona5" onclick="$('#cennik').animatescroll();">
+                        <a href="#zaufali_nam" id="ikona5" onclick="$('#zaufali_nam').animatescroll();">
+                        Zaufali nam
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#cennik" id="ikona6" onclick="$('#cennik').animatescroll();">
                         Cennik
                         </a>
                     </li>
                     <li>
-                        <a href="#kontakt" id="ikona6" onclick="$('#kontakt').animatescroll();">
+                        <a href="#kontakt" id="ikona7" onclick="$('#kontakt').animatescroll();">
                         Kontakt
                         </a>
                     </li>
@@ -89,13 +94,18 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#cennik" id="ikona5" onclick="$('#cennik').animatescroll();">
-                        <h2 id="napis5">Cennik</h2>
+                        <a href="#zaufali_nam" id="ikona5" onclick="$('#zaufali_nam').animatescroll();">
+                        <h2 id="napis5">Zaufali nam</h2>
                         </a>
                     </li>
                     <li>
-                        <a href="#kontakt" id="ikona6" onclick="$('#kontakt').animatescroll();">
-                        <h2 id="napis6">Kontakt</h2>
+                        <a href="#cennik" id="ikona6" onclick="$('#cennik').animatescroll();">
+                        <h2 id="napis6">Cennik</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#kontakt" id="ikona7" onclick="$('#kontakt').animatescroll();">
+                        <h2 id="napis7">Kontakt</h2>
                         </a>
                     </li>
                 </ul>
@@ -408,6 +418,115 @@
                 </a>
             </div>
         </section>
+        <section id="zaufali_nam" class="contentpg">
+            <div class="zaufali_nam_napis">
+                Zaufali nam
+            </div>
+            <div class="loga">
+                <figure>
+                    <a href="">
+                        <img src="img/partner/blyweert.png", alt="blyweert">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/exelent.png", alt="exelent">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/holiday_inn.png", alt="holiday inn">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/ims.png", alt="ims">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/lawenda.png", alt="lawenda">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/lingaro.png", alt="lingaro">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/logo_mazovia.png", alt="mazovia">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/kross_road_tour.png", alt="kross road tour">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/logo_re-kreacja.png", alt="glowno rekreacja">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/nightskating_konstancin.png", alt="nightskating konstancin">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/northtec_mtb_zima.png", alt="northtec mtb zima">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/park_linowy_jachranka.png", alt="park linowy jachranka">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/samorzaduw.png", alt="samorzad uw">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/scooter_kingz.png", alt="scooter kingz">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/teabe.png", alt="teabe">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/zamana_group.png", alt="zamana group">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+                <figure>
+                    <a href="">
+                        <img src="img/partner/zdrofit_ciemne.png", alt="zdrofit">
+                        <figcaption></figcaption>
+                    </a>
+                </figure>
+            </div>
+        </section>
         <section id="cennik" class="contentpg">
             <div class="cennik_napis">
                 Cennik
@@ -498,20 +617,26 @@
         <script type="text/javascript" src="source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
         <script>
                 var main = function() {
+                var menuOpened = 0;
                 /* Push the body and the nav over by 285px over */
                 $('.icon-menu').click(function() {
-                    $('.menu').animate({
-                    left: "0px"
-                    }, 200);
-                    $('body').animate({
-                    left: "285px"
-                    }, 200);
-                    $.fn.animatescroll.defaults = {        
-                        easing:"swing",
-                        scrollSpeed:800,
-                        padding:0,
-                        element:"html,body"
-                    };
+                    if(menuOpened == 0){
+                        $('.menu').animate({
+                        left: "0px"
+                        }, 200);
+                        $('body').animate({
+                        left: "285px"
+                        }, 200);
+                        $.fn.animatescroll.defaults = {        
+                            easing:"swing",
+                            scrollSpeed:800,
+                            padding:0,
+                            element:"html,body"
+                        };
+                        menuOpened = 1;
+                    }else{
+                        $('.icon-close').click();
+                    }
                 });
                 /* Then push them back */
                 $('.icon-close').click(function() {
@@ -521,6 +646,7 @@
                     $('body').animate({
                     left: "0px"
                     }, 200);
+                    menuOpened = 0;
                 });
                 $('li').click(function() {
                     $('.menu').animate({
@@ -530,6 +656,18 @@
                     left: "0px"
                     }, 200);
                 });
+                    var width = screen.width,
+                        height = screen.height;
+                    setInterval(function () {
+                        if (screen.width !== width || screen.height !== height) {
+                            width = screen.width;
+                            height = screen.height;
+                            $(window).trigger('resolutionchange');
+                            if(width >= 991){
+                                $('.icon-close').click();
+                            }
+                        }
+                    }, 50);
                 };
                 $(document).ready(main);
         </script>
