@@ -748,7 +748,7 @@ a {
 }
 
 #zaufali_nam figure {
-    display: inline-block;
+    display: inline-table;
     margin: 20px;
     width: 200px;
 }
