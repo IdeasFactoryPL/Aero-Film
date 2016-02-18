@@ -317,7 +317,7 @@ a {
     text-align: center;
     margin-top: 0;
     height: calc(6vh + 5px);
-    width: 35%;
+    width: 45%;
     font-size: 50px;
     font-weight: bolder;
     font-size: 6vh;
@@ -1126,7 +1126,17 @@ a {
         height: 25px;
     }
 }
-
+@media screen and (max-width: 607px) {
+    #zaufali_nam .loga > figure {
+        width: calc(50% - 80px);
+    }
+    #zaufali_nam .loga > figure img {
+        width: 100%;
+    }
+    #zaufali_nam .loga > figure figcaption {
+        display: none;
+    }
+}
 @media screen and (max-width: 480px) {
     #o_nas {
         background-image: none;
