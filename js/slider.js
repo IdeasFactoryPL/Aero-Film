@@ -1,39 +1,26 @@
 $(document).ready(function () {
+  var carousel = $("#owl-demo");
   
-    var carousel = $("#owl-demo");
-  
-   carousel.owlCarousel({
-    slideSpeed: 900,
-    autoPlay: 4500,
-     navigation:true,
-     navigationText: [
+  carousel.owlCarousel({
+    center: true,
+    items:3,
+    loop:true,
+    margin:0,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 4500,
+    autoplayHoverPause: true,
+    smartSpeed: 800,
+    nav:true,
+    navText: [
       "<img src='img/slider_prev.png'>",
       "<img src='img/slider_next.png'>"
-      ],
-    itemsCustom: [
-      [0,3]
-    ],
-     afterAction: function(el){
-       //remove class active
-       this
-       .$owlItems
-       .removeClass('active')
-        
-       //add class active
-       this
-       .$owlItems //owl internal $ object containing items
-       .eq(this.currentItem + 1)
-       .addClass('active')
-      
-     }
-     
-    });
-  
-  // $(".next").click(function(){
-  //   owl.trigger('owl.next');
-  // })
-  // $(".prev").click(function(){
-  //   owl.trigger('owl.prev');
-  // })
-  
+    ] 
+  });
+  carousel.on('changed.owl.carousel',function(property){
+    current = property.item.index;
+    $(property.target).find(".owl-item").removeClass('active-image');
+    $(property.target).find(".owl-item").eq(current).addClass('active-image');
+  });
+  $('.owl-stage').children().eq(3).addClass("active-image")
 });
